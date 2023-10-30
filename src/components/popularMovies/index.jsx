@@ -1,6 +1,7 @@
 import React from 'react'
 import { usePopularMovies } from '~/redux/features/movie/popular/hooks';
 import { MovieItem } from './movieItems';
+import { Title } from '../title';
 
 export const PopularMovies = () => {
 
@@ -11,7 +12,7 @@ export const PopularMovies = () => {
   return (
     <div className='mt-24'>
 
-    <h3 className=' mx-4 mb-6 text-start font-semibold tracking-wider'>Son dönemde popüler </h3>
+    <Title  title={'Son dönemde popüler '}/>
 
     <div className='grid grid-cols-12 gap-6'>
 

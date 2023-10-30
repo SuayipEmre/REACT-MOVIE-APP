@@ -3,6 +3,7 @@ import { useIsTopRatedMoviesError, useIsTopRatedMoviesLoading, useTopRatedMovies
 import { TopRatedItem } from './topRatedItems';
 import { Error } from '../error';
 import { Loading } from '../loading';
+import { Title } from '../title';
 
 export const TopRatedMovies = () => {
 
@@ -12,7 +13,7 @@ export const TopRatedMovies = () => {
     const topRatedMovies = useTopRatedMovies()
   return (
     <div className='mt-24'>
-        <h3 className=' mx-4 mb-6 text-start font-semibold tracking-wider'>En Yüksek Puanlı filmler</h3>
+        <Title  title={'En Yüksek Puanlı filmler'}/>
 
     {
       isTopRatedMoviesError ? <Error /> : (

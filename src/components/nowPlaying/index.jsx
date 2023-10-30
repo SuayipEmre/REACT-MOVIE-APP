@@ -3,6 +3,7 @@ import { useIsNowPlayingMoviesError, useIsNowPlayingMoviesLoading, useNowPlaying
 import { Error } from '../error'
 import { Loading } from '../loading'
 import { NowPlayingItem } from './nowPlayingItem'
+import { Title } from '../title'
 
 export const NowPlaying = () => {
     const nowPlayingMovies = useNowPlayingMovies()
@@ -12,7 +13,8 @@ export const NowPlaying = () => {
 
     return (
     <div className='mt-24'>
-        <h3 className=' mx-4 mb-6 text-start font-semibold tracking-wider'>Şu anda Gösterimde olan filmler </h3>
+        <Title  title={'Şu anda Gösterimde olan filmler '}/>
+        
         {
             isNowPlayingMoviesError ? <Error /> : 
             (
