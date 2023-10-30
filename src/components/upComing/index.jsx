@@ -7,8 +7,8 @@ import {
 import { Loading } from "../loading";
 import { UpComingItem } from "./upComingItems";
 import { Title } from "../title";
-import { useSearchTitle } from "~/redux/features/search/hooks";
 import { NoMatchesWarning } from "../noMatches";
+import { filterMovies } from "~/helpers/filterMovies";
 
 export const UpComing = () => {
   const upComingMovies = useUpComingMovies();
@@ -16,14 +16,8 @@ export const UpComing = () => {
   const isUpComingMoviesError = useIsUpComingMoviesError();
 
 
-  const searchTitle = useSearchTitle()
-
-  let filteredMovies = []
-  filteredMovies = upComingMovies
-
-  if(searchTitle){
-    filteredMovies = filteredMovies.filter(item => item.title.toLowerCase().includes(searchTitle.toLowerCase()))
-  }
+  const filteredMovies = filterMovies(upComingMovies)
+ 
   return (
     <div className="mt-24">
 

@@ -4,6 +4,7 @@ import { Error } from '~/components/error';
 import { Loading } from '~/components/loading';
 import { MoviesByGenreItems } from '~/components/moviesByGenreItems';
 import { NoMatchesWarning } from '~/components/noMatches';
+import { filterMovies } from '~/helpers/filterMovies';
 import { useIsMoviesError, useIsMoviesLoading, useMoviesByGenre } from '~/redux/features/movie/genre/hooks'
 import { useSearchTitle } from '~/redux/features/search/hooks';
 
@@ -15,14 +16,7 @@ export const MoviesContent = ({genreTitle}) => {
 
 
 
-  const searchTitle = useSearchTitle()
-
-  let filteredMovies = []
-  filteredMovies = movies
-
-  if(searchTitle){
-    filteredMovies = filteredMovies.filter(item => item.title.toLowerCase().includes(searchTitle.toLowerCase()))
-  }
+    const filteredMovies = filterMovies(movies)
 
   return (
     <div>

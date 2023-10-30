@@ -40,7 +40,7 @@ export const MovieDetail = () => {
 
     <div className='grid grid-cols-4   mt-4  gap-4'>
 
-    <div className="col-span-4 md:col-span-2 relative  ">
+    <div className="col-span-4 lg:col-span-2 relative  ">
       <h3 className='absolute top-0 inset-x-8 bg-black/20 rounded-sm text-center  '>
            {
                 movieDetail.title
@@ -92,7 +92,7 @@ export const MovieDetail = () => {
       </>
       </div>
 
-      <div className='col-span-4 md:col-span-2  flex flex-col justify-between '>
+      <div className='col-span-4 lg:col-span-2  flex flex-col justify-between '>
         
         <h5>Orjinal başlık : {movieDetail?.original_title} </h5>
         {movieDetail.tagline && <p>Slogan : <span  className='text-red-700'>{movieDetail?.tagline}</span></p>}

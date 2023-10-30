@@ -1,13 +1,18 @@
 import classNames from 'classnames'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { setSearchTitle } from '~/redux/features/search/actions'
 
 export const MovieCart = ({movie}) => {
     const navigate = useNavigate()
     
+    const handleClick = () => {
+        navigate(`/detail/${movie.id}`)
+        setSearchTitle('')
+    }
     return (
         <div 
-        onClick={() => navigate(`/detail/${movie.id}`) }
+        onClick={handleClick }
         className='col-span-12  sm:col-span-6 lg:col-span-4 xl:col-span-3  relative cursor-pointer  '>
            
            <h3 className='absolute top-0 inset-x-8 bg-black/20 rounded-sm text-center  '>

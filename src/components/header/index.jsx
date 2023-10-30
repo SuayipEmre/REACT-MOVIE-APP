@@ -6,12 +6,12 @@ import { Search } from './search'
 
 export const Header = () => {
   return (
-    <div className='border-b border-white/10 p-4 '>
+    <div className='md:border-b md:border-white/10 mb-24  p-4 relative '>
   
-     <div className=' flex justify-between'>
-     <Link to={'/'}   className=''>
-          <h3 className='text-red-600'>MovieApp</h3>
-      </Link>
+     <div className=' block  md:flex md:justify-between'>
+          <Link to={'/'}   className=''>
+                <h3 className='text-red-600'>MovieApp</h3>
+         </Link>
       <GenreList />
      </div>
     

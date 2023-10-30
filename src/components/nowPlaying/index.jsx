@@ -4,8 +4,8 @@ import { Error } from '../error'
 import { Loading } from '../loading'
 import { NowPlayingItem } from './nowPlayingItem'
 import { Title } from '../title'
-import { useSearchTitle } from '~/redux/features/search/hooks'
 import { NoMatchesWarning } from '../noMatches'
+import { filterMovies } from '~/helpers/filterMovies'
 
 export const NowPlaying = () => {
     const nowPlayingMovies = useNowPlayingMovies()
@@ -14,15 +14,7 @@ export const NowPlaying = () => {
     const isNowPlayingMoviesError = useIsNowPlayingMoviesError()
 
 
-    const searchTitle = useSearchTitle()
-
-    let filteredMovies = []
-    filteredMovies = nowPlayingMovies
-  
-    if(searchTitle){
-      filteredMovies = nowPlayingMovies.filter(item => item.title.toLowerCase().includes(searchTitle.toLowerCase()))
-    }
-
+    const filteredMovies = filterMovies(nowPlayingMovies)
 
     return (
     <div className='mt-24'>
