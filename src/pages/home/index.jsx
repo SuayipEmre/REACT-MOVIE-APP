@@ -19,6 +19,7 @@ export const Home = () => {
    await fetchUpComingMovies()
   }
   
+  
 
   useEffect(() => {
     fetchData()

@@ -6,6 +6,7 @@ import similarMovies  from "../features/movie/similar";
 import topRated from "../features/movie/topRated";
 import nowPlaying from "../features/movie/nowPlaying";
 import upComing from "../features/movie/upComing";
+import search from "../features/search";
 
 export const store = configureStore ({
     reducer : {
@@ -16,5 +17,6 @@ export const store = configureStore ({
         topRated,
         nowPlaying,
         upComing,
+        search,
     }
 })

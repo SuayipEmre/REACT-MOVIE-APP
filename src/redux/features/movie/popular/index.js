@@ -5,7 +5,7 @@ const initialState = {
     movies : []
 }
 export const _fetchPopularMovies = createAsyncThunk('popular/fetchPopularMovies', async() => {
-  const res = await axios.get(`${import.meta.env.VITE_API_BASE_ENDPOINT}/movie/popular?language=tr&api_key=${import.meta.env.VITE_API_KEY }`)
+  const res = await axios.get(`${import.meta.env.VITE_API_BASE_ENDPOINT}/movie/popular?language=tr-TR&api_key=${import.meta.env.VITE_API_KEY }`)
   return res.data.results
 })
 export const popularMovies = createSlice({

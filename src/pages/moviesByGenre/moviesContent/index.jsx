@@ -1,10 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { Error } from '~/components/error';
+import { Loading } from '~/components/loading';
 import { MoviesByGenreItems } from '~/components/moviesByGenreItems';
-import { useMoviesByGenre } from '~/redux/features/movie/genre/hooks'
+import { NoMatchesWarning } from '~/components/noMatches';
+import { useIsMoviesError, useIsMoviesLoading, useMoviesByGenre } from '~/redux/features/movie/genre/hooks'
+import { useSearchTitle } from '~/redux/features/search/hooks';
 
 export const MoviesContent = ({genreTitle}) => {
     const movies = useMoviesByGenre()
+
+    const isMoviesLoading = useIsMoviesLoading()
+    const isMoviesError = useIsMoviesError()
+
+
+
+  const searchTitle = useSearchTitle()
+
+  let filteredMovies = []
+  filteredMovies = movies
+
+  if(searchTitle){
+    filteredMovies = filteredMovies.filter(item => item.title.toLowerCase().includes(searchTitle.toLowerCase()))
+  }
 
   return (
     <div>
@@ -14,13 +32,31 @@ export const MoviesContent = ({genreTitle}) => {
         <Link className='text-red-700' to={(-1)} > önceki Sayfaya Dön</Link>
     </div>     
 
-        <div className='grid grid-cols-12 gap-6'>
-        {
-            movies.map((movie, idx) => (
-                <MoviesByGenreItems key={idx} movie={movie} />
-            ))
-        }
-            </div>
+      {
+        isMoviesError ? <Error /> : (
+            <>
+                {
+                    isMoviesLoading ? <Loading /> : 
+                    (
+                      <>
+                      {
+                        filteredMovies.length == 0 ? <NoMatchesWarning />
+                        : (
+                            <div className='grid grid-cols-12 gap-6'>
+                            {
+                                filteredMovies.map((movie, idx) => (
+                                    <MoviesByGenreItems key={idx} movie={movie} />
+                                ))
+                            }
+                            </div>
+                        )
+                      }
+                      </>
+                    )
+                }
+            </>
+        )
+      }
     </div>
   )
 }

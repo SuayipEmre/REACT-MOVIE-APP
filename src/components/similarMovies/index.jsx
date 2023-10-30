@@ -4,6 +4,8 @@ import { useIsSimilarMoviesError, useIsSimilarMoviesLoading, useSimilarMovies } 
 import { Error } from '../error'
 import { Loading } from '../loading'
 import { SimilarMovieItems } from './movieItems'
+import { useSearchTitle } from '~/redux/features/search/hooks'
+import { NoMatchesWarning } from '../noMatches'
 
 export const SimilarMovies = ({id}) => {
 
@@ -15,6 +17,16 @@ export const SimilarMovies = ({id}) => {
       await fetchSimilarMovies(id)
     }
 
+
+    const searchTitle = useSearchTitle()
+
+  let filteredMovies = []
+  filteredMovies = similarMovies
+
+  if(searchTitle){
+    filteredMovies = similarMovies.filter(item => item.title.toLowerCase().includes(searchTitle.toLowerCase()))
+  }
+  
 
 
     useEffect(() => {
@@ -30,14 +42,21 @@ export const SimilarMovies = ({id}) => {
              {
                 isSimilarMoviesLoading ? <Loading /> : 
                 (
-                   <div className='grid grid-cols-12 gap-6'>
+                  <>
+                    {
+                    filteredMovies.length == 0 ? <NoMatchesWarning /> : 
+                    (
+                      <div className='grid grid-cols-12 gap-6'>
                    
-                       {
-                          similarMovies.map((item, idx) => (
-                            <SimilarMovieItems key={idx} movie={item} />
-                        ))
-                       }
-                   </div>
+                      {
+                         filteredMovies.map((item, idx) => (
+                           <SimilarMovieItems key={idx} movie={item} />
+                       ))
+                      }
+                  </div>
+                    )
+                  }
+                  </>
                 )
              }
              </>

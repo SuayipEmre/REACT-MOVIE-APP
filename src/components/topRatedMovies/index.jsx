@@ -4,6 +4,8 @@ import { TopRatedItem } from './topRatedItems';
 import { Error } from '../error';
 import { Loading } from '../loading';
 import { Title } from '../title';
+import { useSearchTitle } from '~/redux/features/search/hooks';
+import { NoMatchesWarning } from '../noMatches';
 
 export const TopRatedMovies = () => {
 
@@ -11,6 +13,17 @@ export const TopRatedMovies = () => {
   const isTopRatedMoviesLoading = useIsTopRatedMoviesLoading()
   const isTopRatedMoviesError = useIsTopRatedMoviesError()
     const topRatedMovies = useTopRatedMovies()
+
+
+    const searchTitle = useSearchTitle()
+
+    let filteredMovies = []
+    filteredMovies = topRatedMovies
+  
+    if(searchTitle){
+      filteredMovies = topRatedMovies.filter(item => item.title.toLowerCase().includes(searchTitle.toLowerCase()))
+    }
+
   return (
     <div className='mt-24'>
         <Title  title={'En Yüksek Puanlı filmler'}/>
@@ -23,15 +36,20 @@ export const TopRatedMovies = () => {
           :
           (
             <>
-              {
+             {
+              filteredMovies.length == 0 ? <NoMatchesWarning /> : (
+                <>
+                 {
                 <div className='grid grid-cols-12 gap-6'>
                 {
-                    topRatedMovies.map((movie, idx) =>(
+                    filteredMovies.map((movie, idx) =>(
                       <TopRatedItem  movie={movie} key={idx}/>
                     ))
                   }
                 </div>
-              }
+              }</>
+              )
+             }
             </>
           )
         }

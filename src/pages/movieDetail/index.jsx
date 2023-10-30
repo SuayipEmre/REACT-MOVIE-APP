@@ -60,7 +60,7 @@ export const MovieDetail = () => {
         movieDetail?.vote_average ? 
         (
         <>
-           <div className={classNames('absolute right-2  bg-slate-300 text-black px-2 rounded-full bottom-2',{
+           <div className={classNames('absolute right-2   text-black px-2 rounded-full bottom-2',{
     
     "bg-avgColor-default" :Math.round(movieDetail?.vote_average)  > 8.5,
     "bg-avgColor-orange" : Math.round(movieDetail?.vote_average)  < 8.5,
