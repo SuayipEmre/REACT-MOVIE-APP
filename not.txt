@@ -1,0 +1,12 @@
+1 - category,  + 
+2 - movies by genre_id(category), + 
+3 - popular + 
+4 - movie details + 
+
+5 - upComing
+6 - topRated,
+7 - nowPlaying
+8 - Similar + 
+9 - Trending
+ 
+
