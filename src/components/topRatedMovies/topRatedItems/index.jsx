@@ -1,8 +1,8 @@
 import React from 'react'
+import { MovieCart } from '~/components/movieCart';
 
 export const TopRatedItem = ({movie}) => {
-    console.log(movie);
   return (
-    <div>TopRatedItem</div>
+    <MovieCart movie={movie} />
   )
 }

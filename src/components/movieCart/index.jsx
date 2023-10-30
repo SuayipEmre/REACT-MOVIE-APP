@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 export const MovieCart = ({movie}) => {
     const navigate = useNavigate()
+    
     return (
         <div 
         onClick={() => navigate(`/detail/${movie.id}`) }
@@ -20,15 +21,15 @@ export const MovieCart = ({movie}) => {
            <div>
                 <img src={`${import.meta.env.VITE_API_IMAGE_PATH}${movie.backdrop_path}`} alt="" />
             </div>
-            <div className={classNames('absolute right-2  bg-slate-300 text-black px-2 rounded-full bottom-2',{
+            <div className={classNames('absolute right-2   text-black px-2 rounded-full bottom-2',{
     
-         "bg-avgColor-default" : Math.round(movie.vote_average) > 8.5,
-         "bg-avgColor-orange" : Math.round(movie.vote_average) < 8.5,
-         "bg-avgColor-red" : Math.round(movie.vote_average) < 5,
+         "bg-avgColor-default" : Math.round(movie?.vote_average) > 8.5,
+         "bg-avgColor-orange" : Math.round(movie?.vote_average) < 8.5,
+         "bg-avgColor-red" : Math.round(movie?.vote_average) < 5,
             })}>
                 <p>
                 {
-                    Math.round(movie.vote_average) 
+                    Math.round(movie?.vote_average) 
                 
                }
                 </p>

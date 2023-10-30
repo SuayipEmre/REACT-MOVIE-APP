@@ -106,7 +106,7 @@ export const MovieDetail = () => {
      
 
 
-       <div className='mt-8 '>
+       <div className='mt-12 '>
        <h3 className=' mx-4 mb-6 text-start font-semibold tracking-wider'>Benzer türdeki Filmleri incelemek ister misin ?</h3>
         <SimilarMovies  id={id}/>
       </div> 

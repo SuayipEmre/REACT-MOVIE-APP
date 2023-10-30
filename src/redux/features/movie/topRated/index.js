@@ -37,7 +37,6 @@ export const topRated = createSlice({
         })
 
         .addCase(_fetchTopRatedMovies.rejected, (state,action) => {
-            console.log(action.error.message);
           state.topRatedMoviesStatus = {
             isLoading : false,
             isError : true
