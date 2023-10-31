@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux';
 import { NowPlaying } from '~/components/nowPlaying';
 import { PopularMovies } from '~/components/popularMovies'
 import { TopRatedMovies } from '~/components/topRatedMovies';

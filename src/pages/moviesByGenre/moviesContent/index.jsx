@@ -7,7 +7,6 @@ import { MoviesByGenreItems } from '~/components/moviesByGenreItems';
 import { NoMatchesWarning } from '~/components/noMatches';
 import { filterMovies } from '~/helpers/filterMovies';
 import { useIsMoviesError, useIsMoviesLoading, useMoviesByGenre } from '~/redux/features/movie/genre/hooks'
-import { useSearchTitle } from '~/redux/features/search/hooks';
 
 export const MoviesContent = ({ genreTitle }) => {
   const movies = useMoviesByGenre()

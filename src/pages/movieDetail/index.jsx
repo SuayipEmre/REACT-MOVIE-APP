@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 import { SimilarMovies } from '~/components/similarMovies'
 import { fetchMovieDetail } from '~/redux/features/movie/details/actions'
 import { useIsMovieError, useIsMovieLoading, useMovieDetail } from '~/redux/features/movie/details/hooks'
-import { fetchSimilarMovies } from '~/redux/features/movie/similar/actions'
 
 export const MovieDetail = () => {
   const { id } = useParams()

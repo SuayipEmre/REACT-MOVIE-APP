@@ -9,7 +9,7 @@ import { useLocation } from 'react-router-dom';
 export const MoviesByGenre = () => {
 
     const {genreTitle} = useParams()
-    const {state } = useLocation()
+    const {state} = useLocation()
 
     const isLoading = useIsMoviesLoading()
     const isError = useIsMoviesError()

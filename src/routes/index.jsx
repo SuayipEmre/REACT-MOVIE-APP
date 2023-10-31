@@ -1,25 +1,28 @@
+import { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
+import { Loading } from "~/components/loading";
 import { MainLayout } from "~/layouts/main";
 import { Home } from "~/pages/home";
 import { MovieDetail } from "~/pages/movieDetail";
 import { MoviesByGenre } from "~/pages/moviesByGenre";
 
+
 const routes = createBrowserRouter([
     {
         path : '/',
-        element : <MainLayout />,
+        element : <Suspense fallback={<Loading />}> <MainLayout /></Suspense>,
         children : [
             {
                 index : true,
-                element : <Home />
+                element :  <Suspense fallback={<Loading />}>  <Home /></Suspense>
             },
             {
                 path : '/detail/:id',
-                element : <MovieDetail />
+                element :  <Suspense fallback={<Loading />}> <MovieDetail /></Suspense> 
             },
             {
                 path : '/moviesByGenre/:genreTitle',
-                element : <MoviesByGenre />
+                element :  <Suspense fallback={<Loading />}><MoviesByGenre /></Suspense> 
             }
         ]
     }
