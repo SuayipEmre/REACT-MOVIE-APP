@@ -1,10 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { setModal } from '~/redux/features/modal/actions'
 import { setSearchTitle } from '~/redux/features/search/actions'
 
-export const GenreItems = ({genre, setModal}) => {
+export const GenreItems = ({genre}) => {
 
   const navigate = useNavigate()
+
 
   const handleClick  =  async() => {
     setSearchTitle('')

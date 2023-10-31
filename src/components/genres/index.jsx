@@ -5,6 +5,8 @@ import { GenreItems } from './genreItem'
 import { Loading } from '../loading'
 import { Error } from '../error'
 import { AiOutlineDoubleLeft } from 'react-icons/ai';
+import { useModal } from '~/redux/features/modal/hooks'
+import { setModal } from '~/redux/features/modal/actions'
 
 export const GenreList = () => {
 
@@ -12,7 +14,7 @@ export const GenreList = () => {
   const isGenresLoading = useIsGenresLoading()
   const isGenresError = useIsGenreError()
 
-  const [modal, setModal] = useState(false)
+  const modal = useModal()
 
 
 
@@ -22,10 +24,10 @@ export const GenreList = () => {
   }, [])
 
   return (
-    <div className=' flex w-full md:w-1/2 relative  gap-4'>
+    <div className=' flex w-full md:w-1/2 relative   gap-4'>
       {
         modal && (
-          <div className='w-full md:w-[50%] absolute md:top-0 md:right-20 flex-wrap gap-4 rounded-lg border border-white/10 bg-black/75  grid grid-cols-8 '>
+          <div className='w-full md:w-[50%] absolute md:top-0 md:right-20 flex-wrap gap-4 rounded-lg border  border-white/10 bg-black  grid grid-cols-8 '>
             {
               isGenresError ? <Error /> : (
                 <>
@@ -35,7 +37,7 @@ export const GenreList = () => {
                         <>
                           {
                             genres.map((genre, idx) => (
-                              <GenreItems setModal={setModal} genre={genre} key={idx} />
+                              <GenreItems  genre={genre} key={idx} />
                             ))
                           }
                         </>

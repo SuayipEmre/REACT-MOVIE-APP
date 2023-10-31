@@ -7,6 +7,8 @@ import { filterMovies } from '~/helpers/filterMovies';
 import { Error } from '../error';
 import { Loading } from '../loading';
 import { MatchesFound } from '../matchesFound';
+import classNames from 'classnames';
+import { useModal } from '~/redux/features/modal/hooks';
 
 
 export const PopularMovies = () => {
@@ -16,11 +18,14 @@ export const PopularMovies = () => {
   const isPopularMoviesError = useIsPopularMoviesError()  
   const filteredMovies = filterMovies(popularMovies)
 
+  const modal = useModal()
 
 
 
   return (
-    <div className='mt-24'>
+    <div className={classNames('mt-24',{
+      "mt-52 md:mt-24" : modal
+    })}>
 
       <Title title={'Son dönemde popüler '} />
 

@@ -11,6 +11,9 @@ import { fetchUpComingMovies } from '~/redux/features/movie/upComing/actions';
 export const Home = () => {
 
 
+ 
+
+
   const fetchData = async() => {
    await fetchPopularMovies()
    await fetchTopRatedMovies()
@@ -27,6 +30,7 @@ export const Home = () => {
   
   return (
     <div>
+     
       <PopularMovies />
       <TopRatedMovies />
       <NowPlaying />
