@@ -4,9 +4,9 @@ import { TopRatedItem } from './topRatedItems';
 import { Error } from '../error';
 import { Loading } from '../loading';
 import { Title } from '../title';
-import { useSearchTitle } from '~/redux/features/search/hooks';
 import { NoMatchesWarning } from '../noMatches';
 import { filterMovies } from '~/helpers/filterMovies';
+import { MatchesFound } from '../matchesFound';
 
 export const TopRatedMovies = () => {
 
@@ -33,6 +33,9 @@ export const TopRatedMovies = () => {
                     {
                       filteredMovies.length == 0 ? <NoMatchesWarning /> : (
                         <>
+                          {
+                            <MatchesFound movie={filteredMovies} />
+                          }
                           {
                             <div className='grid grid-cols-12 gap-6'>
                               {

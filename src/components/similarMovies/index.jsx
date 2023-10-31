@@ -6,55 +6,61 @@ import { Loading } from '../loading'
 import { SimilarMovieItems } from './movieItems'
 import { NoMatchesWarning } from '../noMatches'
 import { filterMovies } from '~/helpers/filterMovies'
+import { MatchesFound } from '../matchesFound'
 
-export const SimilarMovies = ({id}) => {
+export const SimilarMovies = ({ id }) => {
 
-    const isSimilarMoviesLoading = useIsSimilarMoviesLoading()
-    const isSimilarMoviesError = useIsSimilarMoviesError()
-    const similarMovies = useSimilarMovies()
+  const isSimilarMoviesLoading = useIsSimilarMoviesLoading()
+  const isSimilarMoviesError = useIsSimilarMoviesError()
+  const similarMovies = useSimilarMovies()
 
-    const fetchData = async (id) => {
-      await fetchSimilarMovies(id)
-    }
-
-
-    const filteredMovies = filterMovies(similarMovies)
+  const fetchData = async (id) => {
+    await fetchSimilarMovies(id)
+  }
 
 
-    useEffect(() => {
-      fetchData(id)
-    },[id])
+  const filteredMovies = filterMovies(similarMovies)
+
+
+  useEffect(() => {
+    fetchData(id)
+  }, [id])
   return (
     <div>
 
-        {
-            isSimilarMoviesError ? <Error /> :
-             (
-             <>
-             {
-                isSimilarMoviesLoading ? <Loading /> : 
-                (
-                  <>
-                    {
-                    filteredMovies.length == 0 ? <NoMatchesWarning /> : 
-                    (
-                      <div className='grid grid-cols-12 gap-6'>
-                   
+      {
+        isSimilarMoviesError ? <Error /> :
+          (
+            <>
+              {
+                isSimilarMoviesLoading ? <Loading /> :
+                  (
+                    <>
                       {
-                         filteredMovies.map((item, idx) => (
-                           <SimilarMovieItems key={idx} movie={item} />
-                       ))
-                      }
-                  </div>
-                    )
-                  }
-                  </>
-                )
-             }
-             </>
-             )
+                        filteredMovies.length == 0 ? <NoMatchesWarning /> :
+                          (
+                            <>
+                              {
+                                <MatchesFound movie={filteredMovies} />
+                              }
+                              <div className='grid grid-cols-12 gap-6'>
 
-        }
+                                {
+                                  filteredMovies.map((item, idx) => (
+                                    <SimilarMovieItems key={idx} movie={item} />
+                                  ))
+                                }
+                              </div>
+                            </>
+                          )
+                      }
+                    </>
+                  )
+              }
+            </>
+          )
+
+      }
     </div>
   )
 }

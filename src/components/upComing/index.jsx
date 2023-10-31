@@ -9,6 +9,7 @@ import { UpComingItem } from "./upComingItems";
 import { Title } from "../title";
 import { NoMatchesWarning } from "../noMatches";
 import { filterMovies } from "~/helpers/filterMovies";
+import { MatchesFound } from "../matchesFound";
 
 export const UpComing = () => {
   const upComingMovies = useUpComingMovies();
@@ -17,11 +18,11 @@ export const UpComing = () => {
 
 
   const filteredMovies = filterMovies(upComingMovies)
- 
+
   return (
     <div className="mt-24">
 
-      <Title  title={'Gösterim tarihi yaklaşan filmler'}/>
+      <Title title={'Gösterim tarihi yaklaşan filmler'} />
 
       {isUpComingMoviesError ? (
         <Error />
@@ -32,20 +33,25 @@ export const UpComing = () => {
           ) : (
             <>
               {
-                filteredMovies.length == 0 ? <NoMatchesWarning /> : 
-                (
-                  <div className="grid grid-cols-12 gap-6">
-              
-              {filteredMovies.map((item, idx) => (
-                <UpComingItem movie={item} key={idx} />
-              ))}
-            </div>
-                )
+                filteredMovies.length == 0 ? <NoMatchesWarning /> :
+                  (
+                    <>
+                      {
+                        <MatchesFound movie={filteredMovies} />
+                      }
+                      <div className="grid grid-cols-12 gap-6">
+
+                        {filteredMovies.map((item, idx) => (
+                          <UpComingItem movie={item} key={idx} />
+                        ))}
+                      </div>
+                    </>
+                  )
               }
             </>
           )}
         </>
       )}
     </div>
-  );
-};
+  )
+}
