@@ -94,12 +94,12 @@ export const MovieDetail = () => {
           <div className='col-span-4 lg:col-span-2  '>
 
             <div className='grid grid-cols-1 gap-3 md:gap-6'>
-             {movieDetail?.original_title ?   <h5 className='col-span-1'>Orjinal başlık : {movieDetail?.original_title} </h5> : <p className='text-sm text-red-400'>Başlık bilgisine ulaşılamadı</p>}
+              {movieDetail?.original_title ? <h5 className='col-span-1'>Orjinal başlık : {movieDetail?.original_title} </h5> : <p className='text-sm text-red-400'>Başlık bilgisine ulaşılamadı</p>}
               {movieDetail?.tagline ? <p className='col-span-1'>Slogan : <span className='text-red-700'>{movieDetail?.tagline}</span></p> : <p className='text-sm text-red-400'>Slogan bilgisine ulaşılamadı</p>}
-              {movieDetail?.overview  ?  <p className='col-span-1'>{movieDetail?.overview}</p> : <p className='text-sm text-red-400'>Açıklama bilgisine ulaşılamadı</p>}
+              {movieDetail?.overview ? <p className='col-span-1'>{movieDetail?.overview}</p> : <p className='text-sm text-red-400'>Açıklama bilgisine ulaşılamadı</p>}
               {movieDetail?.release_date ? <p className='col-span-1'>Yayın Tarihi : {movieDetail.release_date}</p> : <p className='text-sm text-red-400'>Yayın tarihi bilgisine ulaşılamadı</p>}
               {movieDetail?.original_language ? <p className='col-span-1'> Yayın dili :{movieDetail.original_language}</p> : <p className='text-sm text-red-400'>Orjinal yayın diline ulaşılamadı</p>}
-             {movieDetail?.budget ?  <p className='col-span-1'>Bütçe : {movieDetail.budget} </p> : <p className='text-sm text-red-400'>Bütçe bilgisine ulaşılamadı</p>}
+              {movieDetail?.budget ? <p className='col-span-1'>Bütçe : {movieDetail.budget} </p> : <p className='text-sm text-red-400'>Bütçe bilgisine ulaşılamadı</p>}
             </div>
 
 

@@ -25,7 +25,7 @@ export const _fetchMoviesByGenre = createAsyncThunk('movies/moviesByGenre', asyn
   return genre.data.results
 })
 
-//https://api.themoviedb.org/3/genre/28/movies?language=tr
+
 export const genre = createSlice({
 
     name :'movieByGenre',

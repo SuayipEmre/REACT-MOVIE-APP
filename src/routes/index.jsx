@@ -5,6 +5,7 @@ import { MainLayout } from "~/layouts/main";
 import { Home } from "~/pages/home";
 import { MovieDetail } from "~/pages/movieDetail";
 import { MoviesByGenre } from "~/pages/moviesByGenre";
+import { NotFound } from "~/pages/notFound";
 
 
 const routes = createBrowserRouter([
@@ -23,6 +24,10 @@ const routes = createBrowserRouter([
             {
                 path : '/moviesByGenre/:genreTitle',
                 element :  <Suspense fallback={<Loading />}><MoviesByGenre /></Suspense> 
+            },
+            {
+                path : '*',
+                element : <NotFound />
             }
         ]
     }
