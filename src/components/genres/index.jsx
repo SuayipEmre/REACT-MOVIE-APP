@@ -34,7 +34,7 @@ export const GenreList = () => {
                     isGenresLoading ? <Loading /> :
                       (
                         <>
-                          <div className='col-span-2  flex  items-center justify-end mt-2'>
+                          <div className='col-span-2  flex  items-center  justify-end mt-2'>
                             <AiFillCloseSquare size={25} className='cursor-pointer' />
                           </div>
                           {

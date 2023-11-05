@@ -14,7 +14,7 @@ export const MainLayout = () => {
 
       <div 
       onClick={() => setModal(!modal)}
-      className={classNames('bg-inherit w-64 h-screen  transition-opacity duration-500 text-center absolute top-0 z-10 left-0 hidden',{
+      className={classNames('bg-black w-64 pl-4 h-screen md:h-[482px] rounded-lg  text-white/80 transition-opacity duration-500 text-center absolute top-0 z-10 left-0 hidden',{
         "!block" : modal
       })}>
         <GenreList />

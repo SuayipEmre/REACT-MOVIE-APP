@@ -15,7 +15,7 @@ export const GenreItems = ({genre}) => {
     setModal(false)
   }
   return (
-    <div className='col-span-1   cursor-pointer hover:text-red-500 duration-500 '>
+    <div className='col-span-1 text-start  cursor-pointer hover:text-red-500 duration-500 '>
        <span onClick={handleClick}>
        {
             genre.name

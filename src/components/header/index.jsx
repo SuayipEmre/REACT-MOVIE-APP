@@ -5,7 +5,7 @@ import { useModal } from '~/redux/features/modal/hooks'
 import { setModal } from '~/redux/features/modal/actions'
 import { setFilterSearchTitle } from '~/redux/features/filterSearch/actions'
 import { setSearchTitle } from '~/redux/features/movie/search/actions'
-
+import { AiFillUnlock, AiFillLock } from 'react-icons/ai';
 export const Header = () => {
   const modal = useModal()
 
@@ -27,7 +27,11 @@ export const Header = () => {
       </div>
 
       <div onClick={() => setModal(!modal)} className='cursor-pointer   flex items-center justify-end gap-4'>
-        <button className='group-hover:text-red-500 transition-colors duration-300 ' >Türler</button>
+        <button className='group-hover:text-red-500 flex gap-2 transition-colors duration-300 ' >
+        {
+          modal ? <AiFillUnlock size={25} className='text-green-500'/>  : <AiFillLock size={25} className='text-red-500'/> 
+        } Türler
+        </button>
       </div>
 
 
