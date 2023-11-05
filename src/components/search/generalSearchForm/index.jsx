@@ -29,7 +29,7 @@ export const GeneralSearch = () => {
                     value={searchTitle}
                     onChange={(e) => setSearchTitle(e.target.value)}
                     type="text"
-                    className={classNames('bg-transparent border-b border-red-500 outline-none  py-1 shadow-sm shadow-white/40 px-8 cursor-pointer duration-500 w-72 lg:w-80 placeholder:text-center ', {
+                    className={classNames('bg-transparent border-b border-red-500 outline-none  py-1 shadow-sm shadow-white/40 px-8 cursor-pointer duration-500 w-44 lg:w-80 placeholder:text-center ', {
                         "hidden md:block": modal
                     })}
                     placeholder='Film Ara' />
