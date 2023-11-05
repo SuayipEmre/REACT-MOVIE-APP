@@ -4,9 +4,9 @@ import { TopRatedItem } from './topRatedItems';
 import { Error } from '../error';
 import { Loading } from '../loading';
 import { Title } from '../title';
-import { NoMatchesWarning } from '../noMatches';
+import { NoMatchesWarning } from '../search/noMatches';
 import { filterMovies } from '~/helpers/filterMovies';
-import { MatchesFound } from '../matchesFound';
+import { MatchesFound } from '../search/matchesFound';
 
 export const TopRatedMovies = () => {
 

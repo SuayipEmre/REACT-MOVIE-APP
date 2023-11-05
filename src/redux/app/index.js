@@ -6,8 +6,9 @@ import similarMovies  from "../features/movie/similar";
 import topRated from "../features/movie/topRated";
 import nowPlaying from "../features/movie/nowPlaying";
 import upComing from "../features/movie/upComing";
-import search from "../features/search";
+import search from "../features/filterSearch";
 import modal from "../features/modal";
+import  searchMovies  from "../features/movie/search";
 
 export const store = configureStore ({
     reducer : {
@@ -20,5 +21,6 @@ export const store = configureStore ({
         upComing,
         search,
         modal,
+        searchMovies,
     }
 })

@@ -1,14 +1,15 @@
 import classNames from 'classnames'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { setSearchTitle } from '~/redux/features/search/actions'
+import { setFilterSearchTitle } from '~/redux/features/filterSearch/actions'
+
 
 export const MovieCart = ({ movie }) => {
     const navigate = useNavigate()
 
     const handleClick = () => {
         navigate(`/detail/${movie.id}`)
-        setSearchTitle('')
+        setFilterSearchTitle('')
     }
     return (
         <div

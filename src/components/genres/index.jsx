@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { fetchGenre } from '~/redux/features/movie/genre/actions'
 import { useGenres, useIsGenreError, useIsGenresLoading } from '~/redux/features/movie/genre/hooks'
 import { GenreItems } from './genreItem'
 import { Loading } from '../loading'
 import { Error } from '../error'
-import { AiOutlineDoubleLeft } from 'react-icons/ai';
 import { useModal } from '~/redux/features/modal/hooks'
-import { setModal } from '~/redux/features/modal/actions'
+import { AiFillCloseSquare } from 'react-icons/ai';
 
 export const GenreList = () => {
 
@@ -18,16 +17,16 @@ export const GenreList = () => {
 
 
 
-
+  //
   useEffect(() => {
     fetchGenre()
   }, [])
 
   return (
-    <div className=' flex w-full md:w-1/2 relative   gap-4'>
+    <div className='flex w-full   gap-4'>
       {
         modal && (
-          <div className='w-full md:w-[50%] absolute md:top-0 md:right-20 flex-wrap gap-4 rounded-lg border  border-white/10 bg-black  grid grid-cols-8 '>
+          <div className='w-full   flex-wrap gap-4 rounded-lg     grid grid-cols-2 '>
             {
               isGenresError ? <Error /> : (
                 <>
@@ -35,9 +34,12 @@ export const GenreList = () => {
                     isGenresLoading ? <Loading /> :
                       (
                         <>
+                          <div className='col-span-2  flex  items-center justify-end mt-2'>
+                            <AiFillCloseSquare size={25} className='cursor-pointer' />
+                          </div>
                           {
                             genres.map((genre, idx) => (
-                              <GenreItems  genre={genre} key={idx} />
+                              <GenreItems genre={genre} key={idx} />
                             ))
                           }
                         </>
@@ -51,10 +53,7 @@ export const GenreList = () => {
 
         )
       }
-      <div onClick={() => setModal(!modal)} className='absolute group bottom-0 right-0   cursor-pointer  flex items-center gap-4'>
-        <AiOutlineDoubleLeft className='group-hover:text-red-500 transition-colors duration-300 ' />
-        <button className='group-hover:text-red-500 transition-colors duration-300 ' >Türler</button>
-      </div>
+
 
 
     </div>

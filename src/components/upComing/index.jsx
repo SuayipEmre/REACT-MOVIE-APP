@@ -7,9 +7,9 @@ import {
 import { Loading } from "../loading";
 import { UpComingItem } from "./upComingItems";
 import { Title } from "../title";
-import { NoMatchesWarning } from "../noMatches";
+import { NoMatchesWarning } from "../search/noMatches";
 import { filterMovies } from "~/helpers/filterMovies";
-import { MatchesFound } from "../matchesFound";
+import { MatchesFound } from "../search/matchesFound";
 
 export const UpComing = () => {
   const upComingMovies = useUpComingMovies();

@@ -1,14 +1,14 @@
-import { useSearchTitle } from "~/redux/features/search/hooks"
+import { useFilterSearchTitle } from "~/redux/features/filterSearch/hooks"
 
 export const filterMovies = (movies) => {
 
-    const searchTitle = useSearchTitle()
+    const filterSearchTitle = useFilterSearchTitle()
 
     let filteredMovies = []
     filteredMovies = movies
 
-    if (searchTitle) {
-        filteredMovies = movies.filter(item => item.title.toLowerCase().includes(searchTitle.toLowerCase()))
+    if (filterSearchTitle) {
+        filteredMovies = movies.filter(item => item.title.toLowerCase().includes(filterSearchTitle.toLowerCase()))
     }
 
     return filteredMovies

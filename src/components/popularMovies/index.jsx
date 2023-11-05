@@ -2,13 +2,12 @@ import React from 'react'
 import { useIsPopularMoviesError, useIsPopularMoviesLoading, usePopularMovies } from '~/redux/features/movie/popular/hooks';
 import { MovieItem } from './movieItems';
 import { Title } from '../title';
-import { NoMatchesWarning } from '../noMatches';
+import { NoMatchesWarning } from '../search/noMatches';
 import { filterMovies } from '~/helpers/filterMovies';
 import { Error } from '../error';
 import { Loading } from '../loading';
-import { MatchesFound } from '../matchesFound';
-import classNames from 'classnames';
-import { useModal } from '~/redux/features/modal/hooks';
+import { MatchesFound } from '../search/matchesFound';
+
 
 
 export const PopularMovies = () => {
@@ -18,16 +17,14 @@ export const PopularMovies = () => {
   const isPopularMoviesError = useIsPopularMoviesError()  
   const filteredMovies = filterMovies(popularMovies)
 
-  const modal = useModal()
 
 
 
   return (
-    <div className={classNames('mt-24',{
-      "mt-52 md:mt-24" : modal
-    })}>
+    <div>
 
       <Title title={'Son dönemde popüler '} />
+      
 
 
 
