@@ -28,24 +28,33 @@ export const NowPlaying = () => {
         <Error />
       ) : (
         <>
-          {isNowPlayingMoviesLoading ? (
-            <Loading />
-          ) : (
-            <>
-              {filteredMovies.length == 0 ? (
-                <NoMatchesWarning />
-              ) : (
-                <>
-                  {<MatchesFound movie={filteredMovies} />}
-                  <div className="grid grid-cols-12 gap-6">
-                    {filteredMovies.map((item, idx) => (
-                      <NowPlayingItem movie={item} key={idx} />
-                    ))}
-                  </div>
-                </>
-              )}
-            </>
-          )}
+          {
+            isNowPlayingMoviesLoading ? (
+              <div className='flex items-center justify-center'>
+
+                <Loading />
+              </div>
+            ) : (
+              <>
+                {
+                  filteredMovies.length == 0 ? (
+                    <NoMatchesWarning />
+                  ) : (
+                    <>
+                      {
+                        <MatchesFound movie={filteredMovies} />
+                      }
+                      <div className="grid grid-cols-12 gap-6">
+                        {
+                          filteredMovies.map((item, idx) => (
+                            <NowPlayingItem movie={item} key={idx} />
+                          ))
+                        }
+                      </div>
+                    </>
+                  )}
+              </>
+            )}
         </>
       )}
     </div>

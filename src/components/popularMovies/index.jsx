@@ -7,6 +7,7 @@ import { filterMovies } from '~/helpers/filterMovies';
 import { Error } from '../error';
 import { Loading } from '../loading';
 import { MatchesFound } from '../search/matchesFound';
+import classNames from 'classnames';
 
 
 
@@ -21,9 +22,11 @@ export const PopularMovies = () => {
 
 
   return (
-    <div>
+    <div className={classNames('', {
+      "flex items-center justify-center" : isPopularMoviesError
+    })}>
 
-      <Title title={'Son dönemde popüler '} />
+  
       
 
 
@@ -32,8 +35,13 @@ export const PopularMovies = () => {
         {
           isPopularMoviesError ? <Error /> : (
             <>
+                <Title title={'Son dönemde popüler '} />
               {
-                isPopularMoviesLoading ? <Loading /> :
+                isPopularMoviesLoading ? (
+                <div className='flex items-center justify-center'>
+                  <Loading />
+                </div>
+                ) :
                   (
 
                     <>

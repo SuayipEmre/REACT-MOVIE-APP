@@ -24,12 +24,16 @@ export const UpComing = () => {
 
       <Title title={'Gösterim tarihi yaklaşan filmler'} />
 
-      {isUpComingMoviesError ? (
+      {
+      isUpComingMoviesError ? (
         <Error />
       ) : (
         <>
           {isUpComingMoviesLoading ? (
-            <Loading />
+            <div className='flex items-center justify-center'>
+
+              <Loading />
+            </div>
           ) : (
             <>
               {

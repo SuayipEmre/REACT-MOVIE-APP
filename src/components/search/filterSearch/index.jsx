@@ -1,13 +1,13 @@
 import classNames from 'classnames';
 import React from 'react'
 import { AiOutlineSearch } from 'react-icons/ai';
-import { useModal } from '~/redux/features/modal/hooks';
+import { useGenreModal } from '~/redux/features/modal/genres/hooks';
 import { setFilterSearchTitle } from '~/redux/features/filterSearch/actions';
 import { useFilterSearchTitle } from '~/redux/features/filterSearch/hooks';
 
 export const Search = ({title}) => {
   const searchTitle = useFilterSearchTitle()
-  const modal = useModal()
+  const modal = useGenreModal()
   return (
     <div className='flex items-center justify-center '>
     

@@ -29,7 +29,12 @@ export const MoviesByGenre = () => {
       isError ? <Error /> : (
         <>
         {
-          isLoading ? <Loading /> : <MoviesContent  genreTitle={state}/>
+          isLoading ?
+          (
+            <div className='flex items-center justify-center'>
+              <Loading />
+            </div>
+          ) : <MoviesContent  genreTitle={state}/>
         }
         </>
       )

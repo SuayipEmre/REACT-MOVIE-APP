@@ -26,7 +26,11 @@ export const TopRatedMovies = () => {
         isTopRatedMoviesError ? <Error /> : (
           <>
             {
-              isTopRatedMoviesLoading ? <Loading />
+              isTopRatedMoviesLoading ? (
+                <div className='flex items-center justify-center'>
+                   <Loading />
+                </div>
+              )
                 :
                 (
                   <>

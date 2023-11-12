@@ -4,6 +4,8 @@ import { fetchSearchMovie } from '~/redux/features/movie/search/actions';
 import { useMoviesIsError } from '~/redux/features/movie/search/hooks';
 import { MoviesContent } from './moviesContent';
 import { Loading } from '~/components/loading';
+import { Error } from '~/components/error';
+import classNames from 'classnames';
 
 export const MoviesBySearch = () => {
   const {title} = useParams()
@@ -18,9 +20,13 @@ export const MoviesBySearch = () => {
      fetchSearchMovie(title)
   },[title])
   return (
-    <div>
+    <div className={classNames('',{
+      "flex items-center justify-center" : isMoviesError
+    })}>
       {
-        isMoviesError ? <Error /> : 
+        isMoviesError ?(
+           <Error /> 
+           ): 
         (
           <>
           {

@@ -11,18 +11,18 @@ const initialState = {
 
 
 
-export const modal = createSlice({
+export const profileModal = createSlice({
     name : 'modal',
     initialState,
 
     reducers :{
-        _setModal: (state, action) => {
+        _setProfileModal: (state, action) => {
           state.modal = action.payload
         }
     }
 })
 
 
-export const{_setModal} = modal.actions
+export const{_setProfileModal} = profileModal.actions
 
-export default modal.reducer
+export default profileModal.reducer

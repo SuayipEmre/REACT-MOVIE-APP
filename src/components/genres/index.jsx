@@ -4,7 +4,7 @@ import { useGenres, useIsGenreError, useIsGenresLoading } from '~/redux/features
 import { GenreItems } from './genreItem'
 import { Loading } from '../loading'
 import { Error } from '../error'
-import { useModal } from '~/redux/features/modal/hooks'
+import { useGenreModal } from '~/redux/features/modal/genres/hooks'
 import { AiFillCloseSquare } from 'react-icons/ai';
 
 export const GenreList = () => {
@@ -13,11 +13,11 @@ export const GenreList = () => {
   const isGenresLoading = useIsGenresLoading()
   const isGenresError = useIsGenreError()
 
-  const modal = useModal()
+  const modal = useGenreModal()
 
 
 
-  //
+
   useEffect(() => {
     fetchGenre()
   }, [])
@@ -34,9 +34,11 @@ export const GenreList = () => {
                     isGenresLoading ? <Loading /> :
                       (
                         <>
-                          <div className='col-span-2  flex  items-center  justify-end mt-2'>
+                          <div className='col-span-2   flex  items-center  justify-between mt-2 border-b border-white/30 pb-2'>
+                            <div>Türler</div>
                             <AiFillCloseSquare size={25} className='cursor-pointer' />
                           </div>
+                          
                           {
                             genres.map((genre, idx) => (
                               <GenreItems genre={genre} key={idx} />

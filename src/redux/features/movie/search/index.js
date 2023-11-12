@@ -31,6 +31,7 @@ export const searchMovies = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(_fetchSearchMovie.fulfilled, (state, action) => {
+                console.log('fullfield');
                 state.movies = action.payload
                 state.moviesStatus = {
                     isError: false,
@@ -39,7 +40,7 @@ export const searchMovies = createSlice({
             })
 
             .addCase(_fetchSearchMovie.pending, (state, action) => {
-                console.log('loading');
+                console.log('pending');
                 state.moviesStatus = {
                     isError: false,
                     isLoading : true
@@ -47,7 +48,7 @@ export const searchMovies = createSlice({
             })
 
             .addCase(_fetchSearchMovie.rejected, (state, action) => {
-                console.log(action.error.message);
+                console.log('fullfield');
                 state.moviesStatus = {
                     isError: true,
                     isLoading : false

@@ -6,7 +6,9 @@ import { Search } from '~/components/search/filterSearch'
 import { SimilarMovies } from '~/components/similarMovies'
 import { fetchMovieDetail } from '~/redux/features/movie/details/actions'
 import { useIsMovieError, useIsMovieLoading, useMovieDetail } from '~/redux/features/movie/details/hooks'
-
+import { DetailInfoControl } from './detailControl'
+import { AiOutlineHeart } from 'react-icons/ai';
+import { IoIosAddCircleOutline } from 'react-icons/io';
 export const MovieDetail = () => {
   const { id } = useParams()
 
@@ -39,7 +41,11 @@ export const MovieDetail = () => {
           isError ? <Error /> :
             (<>
               {
-                isLoading ? <Loading /> :
+                isLoading ? (
+                  <div className='flex items-center justify-center'>
+                    <Loading />
+                  </div>
+                ) :
                   (
 
                     <div className='grid grid-cols-4   mt-4  gap-4'>
@@ -100,7 +106,7 @@ export const MovieDetail = () => {
 
 
                         <div className='grid grid-cols-1 gap-3 md:gap-6'>
-                          {movieDetail?.original_title ? <h5 className='col-span-1'>Orjinal başlık : {movieDetail?.original_title} </h5> : <p className='text-sm text-red-400'>Başlık bilgisine ulaşılamadı</p>}
+                        <DetailInfoControl detailName={movieDetail?.original_title  ?? false} tagline={true} infoTitle='Orjinal başlık' />
 
                           {
                             movieDetail.genres && (
@@ -114,9 +120,9 @@ export const MovieDetail = () => {
                                       {
                                         movieDetail?.genres?.map((item, idx) => (
                                           <span
-                                          className='cursor-pointer hover:text-red-500 '
-                                          onClick={() => navigate(`/moviesByGenre/${item.id}`,{ state: item.name })}
-                                          key={idx}>{item.name}{idx === movieDetail.genres.length - 1 ?  '.' : ','} </span>
+                                            className='cursor-pointer hover:text-red-500 '
+                                            onClick={() => navigate(`/moviesByGenre/${item.id}`, { state: item.name })}
+                                            key={idx}>{item.name}{idx === movieDetail.genres.length - 1 ? '.' : ','} </span>
                                         ))
                                       }
                                     </>
@@ -126,11 +132,17 @@ export const MovieDetail = () => {
                             )
                           }
 
-                          {movieDetail?.tagline ? <p className='col-span-1'>Slogan : <span className='text-red-700'>{movieDetail?.tagline}</span></p> : <p className='text-sm text-red-400'>Slogan bilgisine ulaşılamadı</p>}
-                          {movieDetail?.overview ? <p className='col-span-1'>{movieDetail?.overview}</p> : <p className='text-sm text-red-400'>Açıklama bilgisine ulaşılamadı</p>}
-                          {movieDetail?.release_date ? <p className='col-span-1'>Yayın Tarihi : {movieDetail.release_date}</p> : <p className='text-sm text-red-400'>Yayın tarihi bilgisine ulaşılamadı</p>}
-                          {movieDetail?.original_language ? <p className='col-span-1'> Yayın dili :{movieDetail.original_language}</p> : <p className='text-sm text-red-400'>Orjinal yayın diline ulaşılamadı</p>}
-                          {movieDetail?.budget ? <p className='col-span-1'>Bütçe : {movieDetail.budget} </p> : <p className='text-sm text-red-400'>Bütçe bilgisine ulaşılamadı</p>}
+
+                          <DetailInfoControl detailName={movieDetail?.tagline ?? false} tagline={true} infoTitle='Slogan' />
+                          <DetailInfoControl detailName={movieDetail?.overview ?? false} infoTitle='Açıklama' />
+                          <DetailInfoControl detailName={movieDetail?.release_date ?? false} infoTitle='Yayın Tarihi' />
+                          <DetailInfoControl detailName={movieDetail?.original_language ?? false} infoTitle='Yayın dili' />
+                          <DetailInfoControl detailName={movieDetail?.budget ?? false} infoTitle='Bütçe' />
+                          <div className='flex items-center gap-4 '>
+                            <AiOutlineHeart className='cursor-pointer' size={25} />
+                            <IoIosAddCircleOutline className='cursor-pointer' size={25} />
+                          </div>
+
 
                         </div>
 
