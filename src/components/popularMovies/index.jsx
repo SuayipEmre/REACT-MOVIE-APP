@@ -15,32 +15,27 @@ export const PopularMovies = () => {
 
   const popularMovies = usePopularMovies()
   const isPopularMoviesLoading = useIsPopularMoviesLoading()
-  const isPopularMoviesError = useIsPopularMoviesError()  
+  const isPopularMoviesError = useIsPopularMoviesError()
   const filteredMovies = filterMovies(popularMovies)
 
 
 
 
   return (
-    <div className={classNames('', {
-      "flex items-center justify-center" : isPopularMoviesError
+    <div className={classNames('', {
+      "flex items-center justify-center": isPopularMoviesError
     })}>
-
-  
-      
-
-
 
       <>
         {
           isPopularMoviesError ? <Error /> : (
             <>
-                <Title title={'Son dönemde popüler '} />
+              <Title title={'Son dönemde popüler '} />
               {
                 isPopularMoviesLoading ? (
-                <div className='flex items-center justify-center'>
-                  <Loading />
-                </div>
+                  <div className='flex items-center justify-center'>
+                    <Loading />
+                  </div>
                 ) :
                   (
 
@@ -49,9 +44,9 @@ export const PopularMovies = () => {
                         filteredMovies.length == 0 ? <NoMatchesWarning /> :
                           (
                             <>
-                            {
-                            <MatchesFound movie={filteredMovies} />
-                            }
+                              {
+                                <MatchesFound movie={filteredMovies} />
+                              }
 
                               <div className='grid grid-cols-12 gap-6'>
 

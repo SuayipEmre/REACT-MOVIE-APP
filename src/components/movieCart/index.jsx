@@ -14,7 +14,7 @@ export const MovieCart = ({ movie }) => {
     return (
         <div
             onClick={handleClick}
-            className='col-span-12  sm:col-span-6 lg:col-span-4 xl:col-span-3  relative cursor-pointer  '>
+            className='col-span-12  sm:col-span-6 lg:col-span-4  relative cursor-pointer  '>
 
             <h3 className='absolute top-0 inset-x-8 bg-black/20 rounded-sm text-center  '>
                 {

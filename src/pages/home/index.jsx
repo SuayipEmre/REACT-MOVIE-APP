@@ -19,15 +19,15 @@ export const Home = () => {
 
 
 
-  const fetchData =  () => {
-     fetchPopularMovies()
-     fetchTopRatedMovies()
-     fetchNowPlayingMovies()
-     fetchUpComingMovies()
+  const fetchData = () => {
+    fetchPopularMovies()
+    fetchTopRatedMovies()
+    fetchNowPlayingMovies()
+    fetchUpComingMovies()
   }
 
 
-  
+
 
   useEffect(() => {
     fetchData()
@@ -37,7 +37,7 @@ export const Home = () => {
 
   return (
     <div className={classNames('', {
-      "opacity-50" : modal
+      "opacity-50": modal
     })}>
 
       <div className='mb-4 md:mb-0   md:me-3 flex items-center justify-center md:justify-end'>
