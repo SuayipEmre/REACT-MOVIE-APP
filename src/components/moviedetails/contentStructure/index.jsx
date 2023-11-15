@@ -4,10 +4,11 @@ import { DetailInfoControl } from '../detailControl'
 import { AiOutlineHeart, AiTwotoneHeart } from 'react-icons/ai';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 import { useMovieDetail } from '~/redux/features/movie/details/hooks';
-import { addLikedMovies, fetchIsLiked, removeLikedMovies } from '~/redux/features/movie/likedMovies/actions';
+import { addLikedMovies, removeLikedMovies } from '~/redux/features/movie/likedMovies/actions';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { fetchIsLiked } from '~/helpers/isLikedControl';
 
 export const DetailContent = () => {
   const navigate = useNavigate()
@@ -34,7 +35,7 @@ export const DetailContent = () => {
 
 
   const handleFirstLoad = async (id) => {
-    const { payload } = await fetchIsLiked(id ?? null)
+    const  payload  = await fetchIsLiked(id ?? null)
     setIsLiked(payload == undefined ? false : true)
   }
 

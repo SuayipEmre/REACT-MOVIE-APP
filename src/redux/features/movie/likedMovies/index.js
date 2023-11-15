@@ -26,10 +26,6 @@ export const _removeLikedMovies = createAsyncThunk('likedMovies/removeLikedMovie
 })
 
 
-export const _fetchIsLiked = createAsyncThunk('likedMovies/fetchIsLiked', async(id) => {
-  const {data} = await axios.get(`http://localhost:3000/likedMovies/${id}`)
-  return  data
-})
 
 
 export const likedMovies = createSlice({

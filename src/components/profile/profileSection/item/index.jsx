@@ -8,7 +8,7 @@ export const SectionItem = ({item}) => {
     if(item.title == 'Beğendiklerim'){
       navigate('/profile/myFavoriteMovies')
     }else{
-      console.log('feature/watch later will be here ');
+      console.log('feature/watch-later will be here ');
     }
   }
   return (

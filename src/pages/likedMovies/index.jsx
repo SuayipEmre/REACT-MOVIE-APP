@@ -20,9 +20,12 @@ export const LikedMovies = () => {
 
   return (
     <div>
-      <Title title='Beğendiğin filmler' />
+    { !isError &&  <Title title='Beğendiğin filmler' />}
       {
-        isError ? <Error /> : (
+        isError ? (
+        <div className='flex items-center justify-center'>
+         <Error />
+        </div>) : (
           <>
             {
               isLoading ? (

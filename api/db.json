@@ -59,6 +59,362 @@
       "video": false,
       "vote_average": 8.055,
       "vote_count": 2072
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4XM8DUTQb3lhLemJC51Jx4a2EuA.jpg",
+      "belongs_to_collection": {
+        "id": 9485,
+        "name": "Hızlı ve Öfkeli [Seri]",
+        "poster_path": "/aibYB6OKlb36RaHjDLRjhlfHEdN.jpg",
+        "backdrop_path": "/z5A5W3WYJc3UVEWljSGwdjDgQ0j.jpg"
+      },
+      "budget": 340000000,
+      "genres": [
+        {
+          "id": 28,
+          "name": "Aksiyon"
+        },
+        {
+          "id": 80,
+          "name": "Suç"
+        },
+        {
+          "id": 53,
+          "name": "Gerilim"
+        }
+      ],
+      "homepage": "https://www.fastxmovie.com/",
+      "id": 385687,
+      "imdb_id": "tt5433140",
+      "original_language": "en",
+      "original_title": "Fast X",
+      "overview": "Birçok görevde ve imkansız şartlar altında, Dom Toretto ve ailesi yolundaki her düşmanı kurnazlıkla, cesaretle ve sürüş becerileriyle alt ettiler. Şimdiyse, geçmişin gölgelerinden çıkan kan intikamıyla güçlenmiş ve Dom'un sevdiği her şeyi ve herkesi sonsuza dek yok etmeye kararlı dehşet verici bir tehditle karşı karşıyalar - hayatlarının en ölümcül düşmanıyla.",
+      "popularity": 1434.884,
+      "poster_path": "/i2DDZdMndNoQxCte3U7gkGJRl95.jpg",
+      "production_companies": [
+        {
+          "id": 33,
+          "logo_path": "/8lvHyhjr8oUKOOy2dKXoALWKdp0.png",
+          "name": "Universal Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 333,
+          "logo_path": "/5xUJfzPZ8jWJUDzYtIeuPO4qPIa.png",
+          "name": "Original Film",
+          "origin_country": "US"
+        },
+        {
+          "id": 1225,
+          "logo_path": "/rIxhJMR7oK8b2fMakmTfRLY2TZv.png",
+          "name": "One Race",
+          "origin_country": "US"
+        },
+        {
+          "id": 34530,
+          "logo_path": null,
+          "name": "Perfect Storm Entertainment",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-05-17",
+      "revenue": 704709660,
+      "runtime": 142,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Yolun sonu başlıyor.",
+      "title": "Hızlı ve Öfkeli 10",
+      "video": false,
+      "vote_average": 7.238,
+      "vote_count": 4220
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fm6KqXpk3M2HVveHwCrBSSBaO0V.jpg",
+      "belongs_to_collection": null,
+      "budget": 100000000,
+      "genres": [
+        {
+          "id": 18,
+          "name": "Dram"
+        },
+        {
+          "id": 36,
+          "name": "Tarih"
+        }
+      ],
+      "homepage": "https://www.oppenheimermovie.com/",
+      "id": 872585,
+      "imdb_id": "tt15398776",
+      "original_language": "en",
+      "original_title": "Oppenheimer",
+      "overview": "Oppenheimer, II. Dünya Savaşı döneminde nükleer silah üretmek için başlatılan Manhattan Projesi kapsamında ilk atom bombasını icat eden Los Alamos Laboratuvarı direktörü, teorik fizikçi J. Robert Oppenheimer’a odaklanıyor.",
+      "popularity": 2706.372,
+      "poster_path": "/mmZi0tyPFfbcCqEsJIPxVldCPOL.jpg",
+      "production_companies": [
+        {
+          "id": 9996,
+          "logo_path": "/3tvBqYsBhxWeHlu62SIJ1el93O7.png",
+          "name": "Syncopy",
+          "origin_country": "GB"
+        },
+        {
+          "id": 33,
+          "logo_path": "/8lvHyhjr8oUKOOy2dKXoALWKdp0.png",
+          "name": "Universal Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 507,
+          "logo_path": "/aRmHe6GWxYMRCQljF75rn2B9Gv8.png",
+          "name": "Atlas Entertainment",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "GB",
+          "name": "United Kingdom"
+        },
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-07-19",
+      "revenue": 948900000,
+      "runtime": 181,
+      "spoken_languages": [
+        {
+          "english_name": "Dutch",
+          "iso_639_1": "nl",
+          "name": "Nederlands"
+        },
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Dünya sonsuza kadar değişiyor.",
+      "title": "Oppenheimer",
+      "video": false,
+      "vote_average": 8.238,
+      "vote_count": 4382
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oq1AkrBDj8hRVJqC2NDFT5R1NEa.jpg",
+      "belongs_to_collection": null,
+      "budget": 6900000,
+      "genres": [
+        {
+          "id": 10749,
+          "name": "Romantik"
+        },
+        {
+          "id": 18,
+          "name": "Dram"
+        }
+      ],
+      "homepage": "",
+      "id": 659959,
+      "imdb_id": "tt10457128",
+      "original_language": "fr",
+      "original_title": "Été 85",
+      "overview": "1985 yazında Alex, Normandiya açıklarında alabora olmuşken David kahramanca onu kurtarır. Hayatlarının en deli dolu zamanlarında tanışan bu iki genç, birbirlerinin en iyi dostu olur. Alex, hayallerindeki arkadaşı bulmuştur fakat bu dostluk, beraberinde ona karmaşık duygular getirir.  François Ozon'un bu seneki Cannes Film Festivali'nin resmi seçkisinde yer alan filmi, Aidan Chambers'ın \"Dance on My Grave\" adlı romanından uyarlandı.",
+      "popularity": 10.373,
+      "poster_path": "/csOzXiToCUUp0Laf6pv66mVPREa.jpg",
+      "production_companies": [
+        {
+          "id": 121654,
+          "logo_path": "/3IzRrnakUemajC7fzC07WRNyZ9D.png",
+          "name": "Mandarin Production",
+          "origin_country": "FR"
+        },
+        {
+          "id": 11199,
+          "logo_path": "/ursSXLOZaDxiZ84sEgfXbiFnYaa.png",
+          "name": "SCOPE Pictures",
+          "origin_country": "BE"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "FR",
+          "name": "France"
+        }
+      ],
+      "release_date": "2020-07-14",
+      "revenue": 3600000,
+      "runtime": 101,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        },
+        {
+          "english_name": "French",
+          "iso_639_1": "fr",
+          "name": "Français"
+        }
+      ],
+      "status": "Released",
+      "tagline": "",
+      "title": "85 Yazı",
+      "video": false,
+      "vote_average": 7.4,
+      "vote_count": 723
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/wl4NWiZwpzZH67HiDgpDImLyds9.jpg",
+      "belongs_to_collection": {
+        "id": 126125,
+        "name": "Cehennem Melekleri [Seri]",
+        "poster_path": "/zwnCtNpHa6TFI1z20LPFgdY2Qks.jpg",
+        "backdrop_path": "/lA7oDSt6LkyDqtbFGbyuG0afmTI.jpg"
+      },
+      "budget": 100000000,
+      "genres": [
+        {
+          "id": 28,
+          "name": "Aksiyon"
+        },
+        {
+          "id": 12,
+          "name": "Macera"
+        },
+        {
+          "id": 53,
+          "name": "Gerilim"
+        }
+      ],
+      "homepage": "",
+      "id": 299054,
+      "imdb_id": "tt3291150",
+      "original_language": "en",
+      "original_title": "Expend4bles",
+      "overview": "Cehennem Melekleri 4, deniz açıklarında bulunan bir nükleer füze gemisinin teröristlerce ele geçirilmesi sonucu başlatılan operasyon konu ediyor. Cehennem Melekleri, her türlü silahı kullanma becerisi ile donanmış dünyanın son savunma hattıdır. ABD ile Rusya arasında nükleer bir çatışma çıktığında Barney Ross'un liderliğindeki paralı asker grubu, olaya müdahele etmesi için çağrılır. Ancak onların bu görevin üstesinden gelebilmesi için ekibin genişletilmesi gerekir. Ekine katılan yeni üyeler, yeni tarz ve taktiklerle gruba yeni bir anlam kazandıracaktır.",
+      "popularity": 1362.272,
+      "poster_path": "/ncl4Ttr9ItL2DTg9TIhvtXDCa0Z.jpg",
+      "production_companies": [
+        {
+          "id": 1020,
+          "logo_path": "/kuUIHNwMec4dwOLghDhhZJzHZTd.png",
+          "name": "Millennium Media",
+          "origin_country": "US"
+        },
+        {
+          "id": 48738,
+          "logo_path": null,
+          "name": "Campbell Grobman Films",
+          "origin_country": "US"
+        },
+        {
+          "id": 1632,
+          "logo_path": "/cisLn1YAUuptXVBa0xjq7ST9cH0.png",
+          "name": "Lionsgate",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-09-15",
+      "revenue": 58000000,
+      "runtime": 103,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "",
+      "title": "Cehennem Melekleri 4",
+      "video": false,
+      "vote_average": 6.486,
+      "vote_count": 701
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/pA3vdhadJPxF5GA1uo8OPTiNQDT.jpg",
+      "belongs_to_collection": null,
+      "budget": 14500000,
+      "genres": [
+        {
+          "id": 28,
+          "name": "Aksiyon"
+        },
+        {
+          "id": 18,
+          "name": "Dram"
+        }
+      ],
+      "homepage": "",
+      "id": 678512,
+      "imdb_id": "tt7599146",
+      "original_language": "en",
+      "original_title": "Sound of Freedom",
+      "overview": "Sound of Freedom, hayatını çocukları küresel seks tacirlerinden kurtarmaya adamak için işini bırakan, eski bir ABD hükümet ajanı olan Tim Ballard'ın hayatına odaklanıyor.",
+      "popularity": 1017.896,
+      "poster_path": "/qA5kPYZA7FkVvqcEfJRoOy4kpHg.jpg",
+      "production_companies": [
+        {
+          "id": 90508,
+          "logo_path": null,
+          "name": "Santa Fe Films",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-07-03",
+      "revenue": 239366545,
+      "runtime": 131,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        },
+        {
+          "english_name": "Spanish",
+          "iso_639_1": "es",
+          "name": "Español"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Işık için savaş. Karanlığı sustur.",
+      "title": "Sound of Freedom",
+      "video": false,
+      "vote_average": 8.082,
+      "vote_count": 1414
     }
-  ]
+  ],
+  "addWatchLate": []
 }
