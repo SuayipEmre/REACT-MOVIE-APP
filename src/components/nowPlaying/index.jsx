@@ -24,22 +24,22 @@ export const NowPlaying = () => {
     <div className="mt-24">
       <Title title={"Şu anda Gösterimde olan filmler "} />
 
-      {isNowPlayingMoviesError ? (
+      {isNowPlayingMoviesError ?
         <Error />
-      ) : (
+        :
         <>
           {
-            isNowPlayingMoviesLoading ? (
+            isNowPlayingMoviesLoading ?
               <div className='flex items-center justify-center'>
 
                 <Loading />
               </div>
-            ) : (
+              :
               <>
                 {
                   filteredMovies.length == 0 ? (
                     <NoMatchesWarning />
-                  ) : (
+                  ) :
                     <>
                       {
                         <MatchesFound movie={filteredMovies} />
@@ -52,11 +52,11 @@ export const NowPlaying = () => {
                         }
                       </div>
                     </>
-                  )}
+                }
               </>
-            )}
+          }
         </>
-      )}
+      }
     </div>
   )
 }

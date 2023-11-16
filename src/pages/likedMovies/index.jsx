@@ -6,7 +6,6 @@ import { useLikedMoviesStatus } from '~/redux/features/movie/likedMovies/hooks'
 import { Error } from '~/components/error'
 import { Loading } from '~/components/loading'
 import { Search } from '~/components/search/filterSearch'
-import { filterMovies } from '~/helpers/filterMovies'
 
 
 export const LikedMovies = () => {
@@ -20,7 +19,7 @@ export const LikedMovies = () => {
 
   return (
     <div>
-    { !isError &&  <Title title='Beğendiğin filmler' />}
+    { !isError &&  <Title title='Beğendiğim filmler' />}
       {
         isError ? (
         <div className='flex items-center justify-center'>

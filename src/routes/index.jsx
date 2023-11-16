@@ -8,6 +8,7 @@ import { MovieDetail } from "~/pages/movieDetail";
 import { MoviesByGenre } from "~/pages/moviesByGenre";
 import { MoviesBySearch } from "~/pages/moviesBySearch";
 import { NotFound } from "~/pages/notFound";
+import { WatchLater } from "~/pages/watchLater";
 
 
 const routes = createBrowserRouter([
@@ -36,6 +37,10 @@ const routes = createBrowserRouter([
                 element :  <Suspense fallback={<Loading />}><LikedMovies /></Suspense> 
             },
             {
+                path : '/profile/watchLater',
+                element :  <Suspense fallback={<Loading />}><WatchLater /></Suspense> 
+            },
+            {
                 path : '*',
                 element : <NotFound />
             }
@@ -45,5 +50,3 @@ const routes = createBrowserRouter([
 
 
 export default routes
-
-//

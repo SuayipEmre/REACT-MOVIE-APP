@@ -11,6 +11,7 @@ import searchMovies from "../features/movie/search";
 import genreModal from "../features/modal/genres";
 import profileModal  from "../features/modal/profile";
 import likedMovies from "../features/movie/likedMovies";
+import watchLater from "../features/movie/watchLater";
 
 export const store = configureStore({
     reducer: {
@@ -26,5 +27,6 @@ export const store = configureStore({
         profileModal, 
         searchMovies,
         likedMovies,
+        watchLater,
     }
 })

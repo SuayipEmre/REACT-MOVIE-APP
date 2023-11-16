@@ -1,47 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import classNames from 'classnames';
 import { DetailInfoControl } from '../detailControl'
-import { AiOutlineHeart, AiTwotoneHeart } from 'react-icons/ai';
-import { IoIosAddCircleOutline } from 'react-icons/io';
 import { useMovieDetail } from '~/redux/features/movie/details/hooks';
-import { addLikedMovies, removeLikedMovies } from '~/redux/features/movie/likedMovies/actions';
-import { useNavigate, useParams } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import { WatchLater } from '../watchLater';
+import { AddToLiked } from '../addLiked';
 import 'react-toastify/dist/ReactToastify.css';
-import { fetchIsLiked } from '~/helpers/isLikedControl';
+
 
 export const DetailContent = () => {
   const navigate = useNavigate()
-  const { id } = useParams()
   const movieDetail = useMovieDetail()
-  const [isLiked, setIsLiked] = useState('')
 
 
-  const notify = (value) => toast(`${value === 'add' ? 'Filmi Beğenilenlere Eklediniz' : 'Filmi Beğenilenlerden Sildiniz'}`);
-
-  const handleClick = async () => {
-
-    if (isLiked) {
-      await removeLikedMovies(id)
-      setIsLiked(false)
-      notify('remove')
-    } else {
-      await addLikedMovies(movieDetail)
-      setIsLiked(true)
-      notify('add')
-    }
-
-  }
 
 
-  const handleFirstLoad = async (id) => {
-    const  payload  = await fetchIsLiked(id ?? null)
-    setIsLiked(payload == undefined ? false : true)
-  }
 
-  useEffect(() => {
-    handleFirstLoad(id)
-  }, [id])
+
 
   return (
     <div className='grid grid-cols-4   mt-4  gap-4'>
@@ -62,35 +37,32 @@ export const DetailContent = () => {
         <>
           {
             movieDetail?.vote_average ?
-              (
-                <>
-                  <div className={classNames('absolute right-2   text-black px-2 rounded-full bottom-2', {
-
-                    "bg-avgColor-default": Math.round(movieDetail?.vote_average) > 8.5,
-                    "bg-avgColor-orange": Math.round(movieDetail?.vote_average) < 8.5,
-                    "bg-avgColor-red": Math.round(movieDetail?.vote_average) < 5,
-                  })}>
-                    <p>
-                      {
-                        Math.round(movieDetail?.vote_average)
-
-                      }
-                    </p>
 
 
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className='absolute right-2  bg-slate-300 text-black px-2 rounded-full bottom-2'>
-                    <p>
-                      0
-                    </p>
+              <div className={classNames('absolute right-2   text-black px-2 rounded-full bottom-2', {
+
+                "bg-avgColor-default": Math.round(movieDetail?.vote_average) > 8.5,
+                "bg-avgColor-orange": Math.round(movieDetail?.vote_average) < 8.5,
+                "bg-avgColor-red": Math.round(movieDetail?.vote_average) < 5,
+              })}>
+                <p>
+                  {
+                    Math.round(movieDetail?.vote_average)
+
+                  }
+                </p>
 
 
-                  </div>
-                </>
-              )
+              </div>
+
+              :
+
+              <div className='absolute right-2  bg-slate-300 text-black px-2 rounded-full bottom-2'>
+                <p>
+                  0
+                </p>
+              </div>
+
 
           }
         </>
@@ -103,7 +75,7 @@ export const DetailContent = () => {
           <DetailInfoControl detailName={movieDetail?.original_title ?? false} tagline={true} infoTitle='Orjinal başlık' />
 
           {
-            movieDetail.genres && (
+            movieDetail.genres && 
               <div className='flex items-center gap-3 my-2 flex-wrap'>
 
                 <h5>Türler;</h5>
@@ -123,7 +95,7 @@ export const DetailContent = () => {
                   }
                 </div>
               </div>
-            )
+            
           }
 
 
@@ -135,20 +107,17 @@ export const DetailContent = () => {
 
 
           <div className='flex items-center gap-4 '>
-            <div onClick={handleClick} >
-              {
-                isLiked ? <AiTwotoneHeart size={25} className='cursor-pointer text-red-700' /> : <AiOutlineHeart className='cursor-pointer' size={25} />
-              }
-            </div>
-            <IoIosAddCircleOutline className='cursor-pointer' size={25} />
+            <AddToLiked movieDetail={movieDetail} />
+            <WatchLater movieDetail={movieDetail} />
+
           </div>
 
 
         </div>
 
 
-        <div onClick={() => navigate('/profile/myFavoriteMovies')}>
-          <ToastContainer />
+        <div>
+
         </div>
 
       </div>
