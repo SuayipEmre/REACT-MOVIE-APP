@@ -7,25 +7,24 @@ import { filterMovies } from '~/helpers/filterMovies'
 import { useLikedMovies } from '~/redux/features/movie/likedMovies/hooks'
 
 export const LikedMoviesContent = () => {
-    const likedMovies = useLikedMovies()
-    const filteredMovies = filterMovies(likedMovies)
-    console.log(filterMovies);
+  const likedMovies = useLikedMovies()
+  const filteredMovies = filterMovies(likedMovies)
   return (
     <div className='grid grid-cols-12 gap-4'>
       <div className='col-span-12'>
         {
-          filteredMovies.length == 0 ? <NoMatchesWarning/> : (
+          filteredMovies.length == 0 ? <NoMatchesWarning /> : (
             <>
-            <MatchesFound movie={filteredMovies} />
+              <MatchesFound movie={filteredMovies} />
             </>
           )
         }
       </div>
-        {
-            filteredMovies.map((movie , idx) => (
-               <MovieCart movie={movie} key={idx} />
-            ))
-        }
+      {
+        filteredMovies.map((movie, idx) => (
+          <MovieCart movie={movie} key={idx} />
+        ))
+      }
     </div>
   )
 }

@@ -1,64 +1,30 @@
 {
   "likedMovies": [
     {
-      "adult": false,
-      "backdrop_path": "/t5zCBSB5xMDKcDqe91qahCOUYVV.jpg",
-      "belongs_to_collection": null,
-      "budget": 20000000,
-      "genres": [
-        {
-          "id": 27,
-          "name": "Korku"
-        },
-        {
-          "id": 9648,
-          "name": "Gizem"
-        }
-      ],
-      "homepage": "",
+      "id": 614930,
+      "title": "Ninja Kaplumbağalar: Mutant Kargaşası",
+      "backdrop_path": "/w2nFc2Rsm93PDkvjY4LTn17ePO0.jpg",
+      "vote_average": 7.3
+    },
+    {
+      "id": 980489,
+      "title": "Gran Turismo",
+      "backdrop_path": "/r7DuyYJ0N3cD8bRKsR5Ygq2P7oa.jpg",
+      "vote_average": 7.992
+    }
+  ],
+  "watchLater": [
+    {
       "id": 507089,
-      "imdb_id": "tt4589218",
-      "original_language": "en",
-      "original_title": "Five Nights at Freddy's",
-      "overview": "Sorunlu bir güvenlik görevlisi, Freddy Fazbear's Pizza'da çalışmaya başlar. İşteki ilk gecesini geçirirken, Freddy'deki vardiyasının o kadar kolay geçmeyeceğini fark eder.",
-      "popularity": 2817.844,
-      "poster_path": "/fUNNDqz18t57kHZ6aP6Lwuo2rIC.jpg",
-      "production_companies": [
-        {
-          "id": 3172,
-          "logo_path": "/kDedjRZwO8uyFhuHamomOhN6fzG.png",
-          "name": "Blumhouse Productions",
-          "origin_country": "US"
-        },
-        {
-          "id": 211144,
-          "logo_path": null,
-          "name": "Scott Cawthon Productions",
-          "origin_country": "US"
-        }
-      ],
-      "production_countries": [
-        {
-          "iso_3166_1": "US",
-          "name": "United States of America"
-        }
-      ],
-      "release_date": "2023-10-25",
-      "revenue": 252000000,
-      "runtime": 110,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        }
-      ],
-      "status": "Released",
-      "tagline": "Hayatta kalabilecek misin?",
       "title": "Freddy'nin Pizza Dükkanında Beş Gece",
-      "video": false,
-      "vote_average": 8.055,
-      "vote_count": 2072
+      "backdrop_path": "/t5zCBSB5xMDKcDqe91qahCOUYVV.jpg",
+      "vote_average": 7.999
+    },
+    {
+      "id": 841742,
+      "title": "Megalomaniac",
+      "backdrop_path": "/drfl2eWipiibW3u3Ybx9HQ8VgIn.jpg",
+      "vote_average": 6.2
     }
   ]
 }

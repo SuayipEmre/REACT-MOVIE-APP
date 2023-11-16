@@ -1,24 +1,38 @@
 import React, { useEffect } from 'react'
-import {  useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Loading } from '~/components/loading'
 import { DetailContent } from '~/components/moviedetails/contentStructure'
 import { Search } from '~/components/search/filterSearch'
 import { SimilarMovies } from '~/components/similarMovies'
 import { fetchMovieDetail } from '~/redux/features/movie/details/actions'
 import { useIsMovieError, useIsMovieLoading } from '~/redux/features/movie/details/hooks'
+import { isLikedControl, setIsLiked } from '~/redux/features/movie/likedMovies/actions'
+import { useIsLiked } from '~/redux/features/movie/likedMovies/hooks'
+import { setIsLater, watchLaterControl } from '~/redux/features/movie/watchLater/actions'
+import { useIsLater } from '~/redux/features/movie/watchLater/hooks'
 
 export const MovieDetail = () => {
   const { id } = useParams()
-
+  const isLater = useIsLater()
+  const isLiked = useIsLiked()
   const isLoading = useIsMovieLoading()
   const isError = useIsMovieError()
 
-  
 
- 
+
+
+  const handleFirstLoad = () => {
+    fetchMovieDetail(id)
+    watchLaterControl(id)
+    setIsLater(isLater)
+
+    isLikedControl(id)
+    setIsLiked(isLiked)
+
+  }
 
   useEffect(() => {
-    fetchMovieDetail(id)
+    handleFirstLoad()
   }, [id])
 
 
@@ -44,7 +58,11 @@ export const MovieDetail = () => {
                 ) :
                   (
 
-                    <DetailContent />
+                    <>
+                      <DetailContent id={id} />
+
+                    </>
+
                   )
               }
             </>)

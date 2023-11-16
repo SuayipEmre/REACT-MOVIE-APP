@@ -28,44 +28,42 @@ export const PopularMovies = () => {
 
       <>
         {
-          isPopularMoviesError ? <Error /> : (
+          isPopularMoviesError ? <Error /> :
             <>
               <Title title={'Son dönemde popüler '} />
               {
-                isPopularMoviesLoading ? (
+                isPopularMoviesLoading ?
                   <div className='flex items-center justify-center'>
                     <Loading />
                   </div>
-                ) :
-                  (
+                  :
+                  <>
+                    {
+                      filteredMovies.length == 0 ? <NoMatchesWarning /> :
 
-                    <>
-                      {
-                        filteredMovies.length == 0 ? <NoMatchesWarning /> :
-                          (
-                            <>
-                              {
-                                <MatchesFound movie={filteredMovies} />
-                              }
+                        <>
+                          {
+                            <MatchesFound movie={filteredMovies} />
+                          }
 
-                              <div className='grid grid-cols-12 gap-6'>
+                          <div className='grid grid-cols-12 gap-6'>
 
 
-                                {
-                                  filteredMovies.map((movie, idx) => (
-                                    <MovieItem movie={movie} key={idx} />
-                                  ))
-                                }
+                            {
+                              filteredMovies.map((movie, idx) => (
+                                <MovieItem movie={movie} key={idx} />
+                              ))
+                            }
 
-                              </div>
-                            </>
-                          )
-                      }
-                    </>
-                  )
+                          </div>
+                        </>
+
+                    }
+                  </>
+
               }
             </>
-          )
+
         }
 
       </>

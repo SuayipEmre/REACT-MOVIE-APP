@@ -25,20 +25,20 @@ export const UpComing = () => {
       <Title title={'Gösterim tarihi yaklaşan filmler'} />
 
       {
-      isUpComingMoviesError ? (
+      isUpComingMoviesError ? 
         <Error />
-      ) : (
+       : 
         <>
-          {isUpComingMoviesLoading ? (
+          {isUpComingMoviesLoading ? 
             <div className='flex items-center justify-center'>
 
               <Loading />
             </div>
-          ) : (
+           : 
             <>
               {
                 filteredMovies.length == 0 ? <NoMatchesWarning /> :
-                  (
+                  
                     <>
                       {
                         <MatchesFound movie={filteredMovies} />
@@ -50,12 +50,12 @@ export const UpComing = () => {
                         ))}
                       </div>
                     </>
-                  )
+                  
               }
             </>
-          )}
+          }
         </>
-      )}
+      }
     </div>
   )
 }

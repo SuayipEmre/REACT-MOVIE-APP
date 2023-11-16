@@ -7,6 +7,7 @@ const initialState = {
       isLoading : false,
       isError : false
     },
+    isLiked : false,
 }
 
 export const _fetchLikedMovies = createAsyncThunk('likedMovies/fetchLikedMovies', async() => {
@@ -25,17 +26,22 @@ export const _removeLikedMovies = createAsyncThunk('likedMovies/removeLikedMovie
   return id
 })
 
-
-export const _fetchIsLiked = createAsyncThunk('likedMovies/fetchIsLiked', async(id) => {
-  const {data} = await axios.get(`http://localhost:3000/likedMovies/${id}`)
-  return  data
+export const _isLikedControl = createAsyncThunk('likedMovies/isLikedControl', async(id) => {
+  const { data } = await axios.get(`http://localhost:3000/likedMovies/${id}`)
+  return data
 })
+
 
 
 export const likedMovies = createSlice({
     name : 'liked movies',
     initialState,
 
+    reducers : {
+      _setIsLiked : (state, action) => {
+        state.isLiked = action.payload
+      }
+    },
   
     extraReducers : (builder) => {
 
@@ -114,8 +120,24 @@ export const likedMovies = createSlice({
         }
       })
 
+      //CONTROL
+
+      .addCase(_isLikedControl.fulfilled, (state, action) => {
+        state.isLiked = true
+      })
+
+      .addCase(_isLikedControl.pending, (state, action) => {
+        state.isLiked = false
+      })
+
+
+      .addCase(_isLikedControl.rejected, (state, action) => {
+        state.isLiked = false
+      })
+
+
       
     }
 })
-
+export const{_setIsLiked} = likedMovies.actions
 export default likedMovies.reducer

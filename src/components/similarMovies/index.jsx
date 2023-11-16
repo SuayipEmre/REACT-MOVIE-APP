@@ -34,10 +34,10 @@ export const SimilarMovies = ({ id }) => {
             <>
               {
                 isSimilarMoviesLoading ? (
-                <div className='flex items-center justify-center'>
-                  <Loading /> 
-                </div>
-                ):
+                  <div className='flex items-center justify-center'>
+                    <Loading />
+                  </div>
+                ) :
                   (
                     <>
                       {

@@ -23,19 +23,19 @@ export const TopRatedMovies = () => {
       <Title title={'En Yüksek Puanlı filmler'} />
 
       {
-        isTopRatedMoviesError ? <Error /> : (
+        isTopRatedMoviesError ? <Error /> :
           <>
             {
-              isTopRatedMoviesLoading ? (
+              isTopRatedMoviesLoading ?
                 <div className='flex items-center justify-center'>
-                   <Loading />
+                  <Loading />
                 </div>
-              )
+
                 :
                 (
                   <>
                     {
-                      filteredMovies.length == 0 ? <NoMatchesWarning /> : (
+                      filteredMovies.length == 0 ? <NoMatchesWarning /> :
                         <>
                           {
                             <MatchesFound movie={filteredMovies} />
@@ -49,13 +49,13 @@ export const TopRatedMovies = () => {
                               }
                             </div>
                           }</>
-                      )
+
                     }
                   </>
                 )
             }
           </>
-        )
+
       }
     </div>
   )
