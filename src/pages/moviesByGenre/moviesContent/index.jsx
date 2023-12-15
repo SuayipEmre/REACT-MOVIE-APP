@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { MatchesFound } from '~/components/search/matchesFound';
-import { MoviesByGenreItems } from '~/components/moviesByGenreItems';
 import { NoMatchesWarning } from '~/components/search/noMatches';
 import { filterMovies } from '~/helpers/filterMovies';
 import { useMoviesByGenre } from '~/redux/features/movie/genre/hooks'
 import { Search } from '~/components/search/filterSearch';
 import { setFilterSearchTitle } from '~/redux/features/filterSearch/actions';
 import { setSearchTitle } from '~/redux/features/movie/search/actions';
+import { MovieCard } from '~/components/movieCart';
 
 export const MoviesContent = ({ genreTitle }) => {
   const movies = useMoviesByGenre()
@@ -50,9 +50,7 @@ export const MoviesContent = ({ genreTitle }) => {
 
                 <div className='grid grid-cols-12 gap-6'>
                   {
-                    filteredMovies.map((movie, idx) => (
-                      <MoviesByGenreItems key={idx} movie={movie} />
-                    ))
+                    filteredMovies.map((movie, idx) =>   <MovieCard key={idx} movie={movie} />)
                   }
                 </div>
               </>

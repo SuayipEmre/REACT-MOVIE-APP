@@ -6,7 +6,7 @@ import { setGenreModal } from '~/redux/features/modal/genres/actions'
 import { setProfileModal } from '~/redux/features/modal/profile/actions'
 
 
-export const MovieCart = ({ movie, watchLaterInfo }) => {
+export const MovieCard = ({ movie}) => {
     const navigate = useNavigate()
 
     const handleClick = () => {

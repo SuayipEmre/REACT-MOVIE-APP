@@ -13,21 +13,25 @@ export const WatchLater = () => {
   useEffect(() => {
     fetchWatchLaterMovies()
   }, [])
+
+  const renderItems = () => {
+    if (isError) return <Error />
+    else if (isLoading) return <Loading />
+    return (
+      <>
+        <Search title='Listen içinde ara' />
+        <WatchLaterMoviesContent />
+      </>
+    )
+  }
+
+
   return (
-    <>
+    <div>
       <Title title='Sonra İzle Listem' />
-      <div>
-        {
-          isError ? <Error /> : (
-            isLoading ? <Loading /> : (
-              <>
-                <Search title='Listen içinde ara'  />
-                <WatchLaterMoviesContent />
-              </>
-            )
-          )
-        }
-      </div>
-    </>
+      {
+        renderItems()
+      }
+    </div>
   )
 }

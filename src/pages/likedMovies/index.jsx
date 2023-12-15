@@ -17,31 +17,27 @@ export const LikedMovies = () => {
     fetchLikedMovies()
   }, [])
 
+  const renderItems = () => {
+    if (isError) return <Error />
+    else if (isLoading) return <div className='flex items-center justify-center'>
+      <Loading />
+    </div>
+
+    return (
+      <div className='flex flex-col gap-6'>
+      <Search title='Beğenilenlerde Ara' />
+      <LikedMoviesContent />
+    </div>
+    )
+  }
+
   return (
     <div>
-    { !isError &&  <Title title='Beğendiğim filmler' />}
+      {!isError && <Title title='Beğendiğim filmler' />}
       {
-        isError ? (
-        <div className='flex items-center justify-center'>
-         <Error />
-        </div>) : (
-          <>
-            {
-              isLoading ? (
-                <div className='flex items-center justify-center'>
-                  <Loading />
-                </div>
-              ) : (
-                <div className='flex flex-col gap-6'>
-                <Search title='Beğenilenlerde Ara' />
-                  <LikedMoviesContent />
-                </div>
-              )
-            }
-          
-          </>
-        )
+        renderItems()
       }
+      
     </div>
   )
 }

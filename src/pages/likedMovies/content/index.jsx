@@ -1,9 +1,8 @@
 import React from 'react'
-import { MovieCart } from '~/components/movieCart'
+import { MovieCard } from '~/components/movieCart'
 import { MatchesFound } from '~/components/search/matchesFound'
 import { NoMatchesWarning } from '~/components/search/noMatches'
 import { filterMovies } from '~/helpers/filterMovies'
-
 import { useLikedMovies } from '~/redux/features/movie/likedMovies/hooks'
 
 export const LikedMoviesContent = () => {
@@ -22,7 +21,7 @@ export const LikedMoviesContent = () => {
       </div>
       {
         filteredMovies.map((movie, idx) => (
-          <MovieCart movie={movie} key={idx} />
+          <MovieCard movie={movie} key={idx} />
         ))
       }
     </div>

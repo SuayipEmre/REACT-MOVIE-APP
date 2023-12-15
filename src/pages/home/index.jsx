@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react'
-import { GeneralSearch } from '~/components/search/generalSearchForm';
-
 import { NowPlaying } from '~/components/nowPlaying';
 import { PopularMovies } from '~/components/popularMovies'
 import { Search } from '~/components/search/filterSearch';
@@ -17,8 +15,6 @@ export const Home = () => {
 
   const modal = useProfileModal()
 
-
-
   const fetchData = () => {
     fetchPopularMovies()
     fetchTopRatedMovies()
@@ -26,13 +22,9 @@ export const Home = () => {
     fetchUpComingMovies()
   }
 
-
-
-
   useEffect(() => {
     fetchData()
   }, [])
-
 
 
   return (

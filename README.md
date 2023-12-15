@@ -10,7 +10,7 @@ you can look to the movies by their genres.
 
 You can  like movies and save them to watch later."
 
-
+DetailContent
 
 [Watch Video](https://youtu.be/7sP0yN6Tdoc)
 

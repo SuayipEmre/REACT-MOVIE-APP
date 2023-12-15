@@ -36,7 +36,18 @@ export const MovieDetail = () => {
   }, [id])
 
 
+  const renderItems = () => {
+    if (isError) return <Error />
+    else if (isLoading) return <div className='flex items-center justify-center'>
+      <Loading />
+    </div>
 
+    return (
+      <DetailContent id={id} />
+
+    )
+
+  }
 
 
 
@@ -44,29 +55,13 @@ export const MovieDetail = () => {
 
   return (
     <>
-      <div className=' '>
-
+      <div>
 
         {
-          isError ? <Error /> :
-            (<>
-              {
-                isLoading ? (
-                  <div className='flex items-center justify-center'>
-                    <Loading />
-                  </div>
-                ) :
-                  (
-
-                    <>
-                      <DetailContent id={id} />
-
-                    </>
-
-                  )
-              }
-            </>)
+          renderItems()
         }
+
+
         <div className='mt-12 '>
           <h3 className=' mx-4 mb-6 text-start font-semibold tracking-wider'>Benzer türdeki Filmleri incelemek ister misin ?</h3>
           <Search title='Benzer Filmler içerisinde ara' />

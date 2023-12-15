@@ -8,11 +8,12 @@ import { useFilterSearchTitle } from '~/redux/features/filterSearch/hooks';
 export const Search = ({title}) => {
   const searchTitle = useFilterSearchTitle()
   const modal = useGenreModal()
+
   return (
     <div className='flex items-center justify-center '>
     
 
-        <div className='relative'>
+        <div className='relative mb-4'>
           <input
             value={searchTitle}
             onChange={(e) => setFilterSearchTitle(e.target.value)}

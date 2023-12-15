@@ -5,11 +5,11 @@ import {
   useUpComingMovies,
 } from "~/redux/features/movie/upComing/hooks";
 import { Loading } from "../loading";
-import { UpComingItem } from "./upComingItems";
 import { Title } from "../title";
 import { NoMatchesWarning } from "../search/noMatches";
 import { filterMovies } from "~/helpers/filterMovies";
 import { MatchesFound } from "../search/matchesFound";
+import { MovieCard } from "../movieCart";
 
 export const UpComing = () => {
   const upComingMovies = useUpComingMovies();
@@ -19,42 +19,46 @@ export const UpComing = () => {
 
   const filteredMovies = filterMovies(upComingMovies)
 
-  return (
-    <div className="mt-24">
 
-      <Title title={'Gösterim tarihi yaklaşan filmler'} />
+  const renderItems = () => {
 
-      {
-      isUpComingMoviesError ? 
-        <Error />
-       : 
-        <>
-          {isUpComingMoviesLoading ? 
-            <div className='flex items-center justify-center'>
+    if (isUpComingMoviesError) return <Error />
 
-              <Loading />
-            </div>
-           : 
+    else if (isUpComingMoviesLoading) return (
+      <div className='flex items-center justify-center'>
+        <Loading />
+      </div>
+    )
+
+    return (
+      <>
+        {
+          filteredMovies.length == 0 ? <NoMatchesWarning /> :
+
             <>
               {
-                filteredMovies.length == 0 ? <NoMatchesWarning /> :
-                  
-                    <>
-                      {
-                        <MatchesFound movie={filteredMovies} />
-                      }
-                      <div className="grid grid-cols-12 gap-6">
-
-                        {filteredMovies.map((item, idx) => (
-                          <UpComingItem movie={item} key={idx} />
-                        ))}
-                      </div>
-                    </>
-                  
+                <MatchesFound movie={filteredMovies} />
               }
+              <div className="grid grid-cols-12 gap-6">
+
+                {filteredMovies.map((item, idx) => (
+                  <MovieCard movie={item} key={idx} />
+                ))}
+              </div>
             </>
-          }
-        </>
+
+        }
+      </>
+    )
+  }
+
+
+
+  return (
+    <div className="mt-24">
+      <Title title={'Gösterim tarihi yaklaşan filmler'} />
+      {
+        renderItems()
       }
     </div>
   )

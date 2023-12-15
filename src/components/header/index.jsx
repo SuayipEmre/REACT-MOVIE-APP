@@ -23,37 +23,32 @@ export const Header = () => {
   return (
 
     <>
-    <div className='flex items-center justify-center py-2 border-b border-red-500/50'>
+      <div className='flex items-center justify-center py-2 border-b border-red-500/50'>
         <Link to={'/'}>
           <h3 onClick={handleClick} className='text-red-600 cursor-pointer'>MovieApp</h3>
         </Link>
       </div>
 
-    <div className='md:border-b flex justify-between   md:border-white/10 mb-24  p-4 relative '>
+      <div className='md:border-b flex justify-between   md:border-white/10 mb-24  p-4 relative '>
 
 
-      <div onClick={handleModalClick} className='cursor-pointer   flex items-center justify-end gap-4'>
-        <button className='group-hover:text-red-500 flex gap-2 transition-colors duration-300  items-center justify-center' >
-          <AiOutlineUnorderedList  size={20}/>
-          Türler
-        </button>
-      </div>
+        <div onClick={handleModalClick} className='cursor-pointer   flex items-center justify-end gap-4'>
+          <button className='group-hover:text-red-500 flex gap-2 transition-colors duration-300  items-center justify-center' >
+            <AiOutlineUnorderedList size={20} />
+            Türler
+          </button>
+        </div>
 
-      
 
-      <div className='flex items-center   gap-4 '>
 
-        <div >
+        <div className='flex items-center   gap-4 '>
           <GeneralSearch />
+          <Profile />
         </div>
-        <div >
-         <Profile />
-        </div>
+
+
+
       </div>
-
-
-
-    </div>
     </>
   )
 }

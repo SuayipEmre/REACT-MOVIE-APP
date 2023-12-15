@@ -8,40 +8,34 @@ import { Loading } from '~/components/loading'
 import { useLocation } from 'react-router-dom';
 export const MoviesByGenre = () => {
 
-    const {genreTitle} = useParams()
-    const {state} = useLocation()
+  const { genreTitle } = useParams()
+  const { state } = useLocation()
 
-    const isLoading = useIsMoviesLoading()
-    const isError = useIsMoviesError()
+  const isLoading = useIsMoviesLoading()
+  const isError = useIsMoviesError()
 
- 
 
-    useEffect(() => {
-        fetchMoviesByGenre(genreTitle)
-    },[genreTitle])
 
-  return (
-    <div>
-      
-      
+  useEffect(() => {
+    fetchMoviesByGenre(genreTitle)
+  }, [genreTitle])
 
-    {
-      isError ? <Error /> : (
-        <>
-        {
-          isLoading ?
-          (
-            <div className='flex items-center justify-center'>
-              <Loading />
-            </div>
-          ) : <MoviesContent  genreTitle={state}/>
-        }
-        </>
-      )
-    }
-     
-
+  const renderItems = () => {
     
+    if (isError) return <Error />
+    else if (isLoading) return <div className='flex items-center justify-center'>
+      <Loading />
     </div>
-  )
-}
+
+    return <MoviesContent genreTitle={state} />
+
+  }
+
+    return (
+      <div>
+        {
+          renderItems()
+        }
+      </div>
+    )
+  }

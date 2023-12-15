@@ -1,5 +1,5 @@
 import React from 'react'
-import { MovieCart } from '~/components/movieCart';
+import { MovieCard } from '~/components/movieCart';
 import { MatchesFound } from '~/components/search/matchesFound';
 import { NoMatchesWarning } from '~/components/search/noMatches';
 import { filterMovies } from '~/helpers/filterMovies';
@@ -7,7 +7,6 @@ import { useWatchLaterMovies } from '~/redux/features/movie/watchLater/hooks';
 
 export const WatchLaterMoviesContent = () => {
   const movie = useWatchLaterMovies()
-  console.log(movie);
   const filteredMovies = filterMovies(movie)
 
   return (
@@ -25,7 +24,7 @@ export const WatchLaterMoviesContent = () => {
         </div>
         {
           filteredMovies.map((item, idx) => (
-            <MovieCart watchLaterInfo={true} movie={item} key={idx} />
+            <MovieCard watchLaterInfo={true} movie={item} key={idx} />
           ))
         }
       </div>
